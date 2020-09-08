@@ -1,0 +1,369 @@
+.top {
+  position: relative;
+  height: 100vh;
+}
+.top .big-en {
+  color: #000;
+  font-size: 80px;
+  position: absolute;
+  top: 5%;
+  left: 18%;
+}
+.top .big-en span {
+  display: block;
+  text-align: center;
+}
+
+.bg {
+  position: absolute;
+  right: 0;
+  width: 80%;
+  height: 90%;
+  overflow: hidden;
+}
+.bg .pic {
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.pg-title {
+  font-size: 30px;
+  position: absolute;
+  bottom: 10px;
+  left: 20%;
+}
+
+.level1 {
+  padding: 100px 0;
+}
+.level1 .concept {
+  width: 30%;
+  margin-left: 50%;
+  -moz-transform: translateY(-140px);
+  -ms-transform: translateY(-140px);
+  -webkit-transform: translateY(-140px);
+  transform: translateY(-140px);
+}
+
+.level2 .middle-pic {
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+}
+.level2 .middle-pic img {
+  width: 105%;
+}
+.level2 .concept {
+  width: 30%;
+  margin-left: 20%;
+  padding: 100px 0;
+}
+
+.level3 {
+  padding: 150px 0 150px;
+}
+.level3 .box1 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.level3 .middle-pic {
+  position: relative;
+  width: 40%;
+  overflow: hidden;
+}
+.level3 .middle-pic img {
+  width: 105%;
+}
+.level3 .concept {
+  width: 40%;
+  margin-left: 15%;
+  padding: 100px 0;
+}
+.level3 .concept-slogn {
+  font-size: 38px;
+  position: relative;
+  top: 120px;
+}
+.level3 .concept-slogn2 {
+  font-size: 38px;
+  margin-left: 50px;
+  position: relative;
+  top: 160px;
+}
+
+.level4 {
+  padding: 100px 0;
+}
+.level4 .title {
+  text-align: center;
+}
+.level4 .box2 {
+  display: flex;
+  max-width: 60%;
+  margin: auto;
+  padding-top: 30px;
+}
+.level4 .concept {
+  width: 45%;
+  margin: auto;
+}
+.level4 .director-pic {
+  position: relative;
+  margin: auto;
+}
+.level4 .director-pic img {
+  width: 100%;
+}
+.level4 .concept-in {
+  text-align: center;
+  padding: 50px 0;
+  width: 250px;
+  margin: auto;
+}
+.level4 .director-name {
+  text-align: center;
+  color: #a59180;
+  font-size: 18px;
+}
+.level4 .director-in {
+  width: fit-content;
+  margin: auto;
+  padding-top: 30px;
+  display: flex;
+}
+.level4 .experience {
+  margin-right: 35px;
+}
+
+.move1 {
+  opacity: 0;
+  -moz-transform: translateY(80px);
+  -ms-transform: translateY(80px);
+  -webkit-transform: translateY(80px);
+  transform: translateY(80px);
+}
+
+.move1 {
+  -moz-transition: opacity 0.8s, -moz-transform 0.8s;
+  -o-transition: opacity 0.8s, -o-transform 0.8s;
+  -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
+  transition: opacity 0.8s, transform 0.8s;
+}
+.move1.show {
+  opacity: 1;
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
+
+.move2:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  -moz-transition: width 0.8s;
+  -o-transition: width 0.8s;
+  -webkit-transition: width 0.8s;
+  transition: width 0.8s;
+}
+.move2.show:after {
+  width: 0;
+}
+
+.move3:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  -moz-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+.move3.show:after {
+  width: 0;
+}
+
+.move4:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  -moz-transition: height 0.8s;
+  -o-transition: height 0.8s;
+  -webkit-transition: height 0.8s;
+  transition: height 0.8s;
+  -moz-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.move4.show:after {
+  height: 0;
+}
+
+@media screen and (max-width: 1500px) {
+  .level3 .concept {
+    margin-left: 0;
+  }
+  .level3 .concept .concept-slogn {
+    font-size: 34px;
+    top: 70px;
+  }
+  .level3 .concept .concept-slogn2 {
+    font-size: 34px;
+    top: 90px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .bg {
+    width: 90%;
+  }
+
+  .pg-title {
+    left: 10%;
+  }
+
+  .level1 .concept {
+    margin-right: 10%;
+    width: 40%;
+  }
+
+  .level2 .middle-pic {
+    width: 90%;
+  }
+  .level2 .concept {
+    margin-left: 10%;
+    width: 40%;
+  }
+
+  .level3 {
+    padding: 80px 0 100px;
+  }
+  .level3 .concept {
+    padding: 50px 0;
+  }
+  .level3 .concept .concept-slogn {
+    font-size: 28px;
+    top: 80px;
+  }
+  .level3 .concept .concept-slogn2 {
+    font-size: 28px;
+    top: 90px;
+  }
+
+  .level4 .box2 {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .level1 {
+    padding: 80px 0 100px;
+  }
+  .level1 .concept {
+    width: 80%;
+    float: unset;
+    margin-right: unset;
+    margin-left: 10%;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  .level2 .concept {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .level3 .concept {
+    width: unset;
+    margin: auto;
+  }
+  .level3 .concept .concept-slogn {
+    font-size: 24px;
+    top: 30px;
+  }
+  .level3 .concept .concept-slogn2 {
+    font-size: 24px;
+    top: 40px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .level3 {
+    padding: 80px 0 30px;
+  }
+  .level3 .box1 {
+    display: unset;
+  }
+  .level3 .middle-pic {
+    width: 70%;
+    margin: auto;
+  }
+  .level3 .concept .concept-slogn {
+    position: unset;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .level3 .concept .concept-slogn2 {
+    position: unset;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .level4 {
+    padding: 50px 0;
+  }
+  .level4 .box2 {
+    display: unset;
+  }
+  .level4 .concept {
+    width: 80%;
+    padding-top: 50px;
+  }
+  .level4 .title {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .bg {
+    width: 100%;
+  }
+
+  .level2 .middle-pic {
+    width: 100%;
+  }
+
+  .level3 {
+    padding: 0;
+  }
+  .level3 .middle-pic {
+    width: 90%;
+  }
+
+  .level4 .concept-in {
+    padding: 50px 0;
+  }
+  .level4 .director-in {
+    padding-top: 10px;
+  }
+}
+@media screen and (max-height: 460px) {
+  .pg-title {
+    bottom: 5px;
+  }
+}
