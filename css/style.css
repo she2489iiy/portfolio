@@ -117,9 +117,9 @@ a {
 }
 .header .logo {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 40px;
+  top: 10px;
+  left: 10px;
+  width: 60px;
   overflow: hidden;
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -195,7 +195,7 @@ a {
   width: 90px;
 }
 .header:hover .logo {
-  left: 25px;
+  left: 15px;
 }
 .header:hover .menu {
   left: 25px;
@@ -255,6 +255,7 @@ a {
 }
 .header .logo2 {
   position: fixed;
+  top: -30px;
   width: calc(100vw);
   height: 100%;
   pointer-events: none;
@@ -639,6 +640,10 @@ footer .footer-in {
 }
 .show .logo2 a {
   opacity: 1;
+  -moz-transform: scale(2, 2);
+  -ms-transform: scale(2, 2);
+  -webkit-transform: scale(2, 2);
+  transform: scale(2, 2);
 }
 .show .berger .line:nth-child(1) {
   -moz-transform: rotate(45deg) translateY(6px);
@@ -930,15 +935,6 @@ nav ul li {
     margin-bottom: 165px;
   }
 
-  .header {
-    height: 60px;
-  }
-  .header .berger {
-    margin: 25px 30px 0 0;
-  }
-  .header .logo {
-    top: 10px;
-  }
   .header nav ul li {
     margin-bottom: 20px;
   }
@@ -949,7 +945,7 @@ nav ul li {
     margin-bottom: 20px;
   }
   .header .logo2 a {
-    top: 20px;
+    top: 40px;
     -moz-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);
@@ -972,14 +968,6 @@ nav ul li {
   }
 }
 @media screen and (max-width: 640px) {
-  .header .logo2 a {
-    width: 40px;
-    top: 20px;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-  }
   .header nav {
     left: 20%;
   }

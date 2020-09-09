@@ -61,8 +61,8 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #bc80ff;
-  margin: 20px 15px;
+  background: #6c7c86;
+  margin: 30px 15px;
 }
 .dot li:after {
   content: "";
@@ -72,7 +72,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #bc80ff;
+  background-color: #b7d5f9;
   opacity: 0.3;
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -85,8 +85,8 @@
   z-index: -1;
 }
 .dot li:hover:after {
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
 }
 
 .move1 {
@@ -145,15 +145,5 @@
     left: 5%;
     color: #fff;
     font-size: 36px;
-  }
-
-  .header {
-    height: 60px;
-  }
-  .header .berger {
-    margin: 25px 30px 0 0;
-  }
-  .header .logo {
-    top: 10px;
   }
 }

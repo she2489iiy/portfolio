@@ -1,0 +1,707 @@
+@import	compass/css3
+@import _reset.sass
+
+/*font*/
+@import url('https://fonts.googleapis.com/css?family=Raleway:200')
+@import url('https://fonts.googleapis.com/css?family=Ovo')
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap')
+
+
+body
+	font-family: Raleway,Quicksand, "Microsoft JhengHei" , Arial, Helvetica, sans-serif
+	font-size: 0.9em 
+	letter-spacing: 0.1em
+	line-height: 2em
+	
+
+a
+	text-decoration: none
+	color: #666
+
+#loading
+	width: 100%
+	height: calc(100vh)
+	position: absolute
+	top: 0
+	background-color: #fff
+	z-index: 40
+
+.wrapper
+	overflow: hidden
+
+.en
+	font-size: 1em
+
+
+.speciall
+	font-family: Ovo, "Microsoft JhengHei" , Arial, Helvetica, sans-serif
+
+.other-font
+	font-family: Pacifico, "Microsoft JhengHei" , Arial, Helvetica, sans-serif
+
+.title
+	font-size: 26px
+	color: #b2a193
+	margin-bottom: 50px
+
+.main
+	margin-left: 80px
+	margin-right: 80px
+	margin-bottom: 117px
+	background: #fff
+	overflow: hidden
+
+.inner
+	margin-left: 80px
+
+.header
+	position: fixed
+	z-index: 10
+	width: 80px
+	height: 100%
+	background: #fafafa
+	border-right: 1px solid #eee
+	+transition(all .5s cubic-bezier(.165,.84,.44,1))
+
+	.logo
+		position: absolute
+		top: 10px
+		left: 10px
+		width: 60px
+		overflow: hidden
+		+scale(1,1)
+		+transition(all .3s cubic-bezier(.165,.84,.44,1))
+
+		img
+			width: 100%
+
+		&:hover
+			+scale(1.1,1.1)
+
+	.menu
+		position: absolute
+		top: 50%
+		left: 20px
+		cursor: pointer
+		opacity: 1
+		pointer-events: auto
+		font-weight: 800
+		font-size: 12px
+		+translateY(-50%)
+		+rotate(-90deg)
+		+transition(all .3s cubic-bezier(.165,.84,.44,1))
+		color: #021e2f
+		&:hover
+			color: #666
+
+	.close
+		position: absolute
+		top: 50%
+		left: 17px
+		pointer-events: none
+		cursor: pointer
+		font-weight: 800
+		font-size: 12px
+		opacity: 0
+		+translateY(-50%)
+		+rotate(-90deg)
+		+transition(all .3s cubic-bezier(.165,.84,.44,1))
+		color: #a59180
+		&:hover
+			color: #675b52
+
+	&:hover
+		width: 90px
+
+		.logo
+			left: 15px
+
+		.menu
+			left: 25px
+
+		.close
+			left: 25px	
+
+	&:active
+		width: 80px
+
+		.logo
+			left: 20px
+
+		.menu
+			left: 20px
+
+
+	.berger
+		position: fixed
+		right: 0
+		cursor: pointer
+		margin: 35px 30px 0px 0px
+		opacity: 0
+		pointer-events: auto
+
+		.line
+			width: 10px
+			height: 2px
+			background-color: #ccc
+
+			&:nth-child(1)
+				+translateY(0px)
+				+transition(all .2s cubic-bezier(.165,.84,.44,1))
+
+			&:nth-child(2)
+				margin: 2px 0
+				opacity: 1
+				+transition(all .2s cubic-bezier(.165,.84,.44,1))
+
+			&:nth-child(3)
+				+translateY(0px)
+				+transition(all .2s cubic-bezier(.165,.84,.44,1))		
+
+	.logo2
+		position: fixed
+		top: -30px
+		width: calc(100vw)
+		height: 100%
+		pointer-events: none
+		opacity: 0
+		z-index: -1
+		a
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 55px
+			overflow: hidden
+			opacity: 0
+			+translate(-50%,-50%)
+			img
+				width: 100%
+
+	.nav-follow
+		position: fixed
+		right: 40px
+		top: 50%
+		pointer-events: none
+		opacity: 0
+		.nav-fb,
+		.nav-ig,
+		.nav-line
+			display: block
+			width: 15px
+			opacity: 0.3
+			&:hover
+				opacity: 0.5
+		.nav-ig
+			margin: 20px 0		
+
+	nav
+		position: fixed
+		width: 200px
+		left: 25%
+		top: 50%
+		opacity: 0
+		pointer-events: none
+		+translateY(-50%)
+
+		ul
+			width: 200px
+			position: absolute
+			top: 50%
+			+translateY(-50%)
+
+			li
+				display: block
+				text-align: left
+				height: 30px
+				margin-bottom: 30px
+				overflow: hidden
+
+				.en
+					display: block
+					font-size: 36px
+					+translateY(0px)
+					+transition(all 0.5s cubic-bezier(.165,.84,.44,1))
+					color: #ccc
+
+				.tw
+					position: relative
+					left: 0
+					top: -25px
+					display: block
+					opacity: 0
+					font-size: 16px
+					+translateY(-10px)
+					+transition(all 0.3s cubic-bezier(.165,.84,.44,1))
+
+				a:hover
+					.en
+						opacity: 0
+						+translateY(10px)
+
+					.tw
+						opacity: 1
+						+translateY(0px)
+		.on
+			.en
+				color: #aaa
+
+	.nav2
+		position: fixed
+		width: 210px
+		right: 20%
+		top: 50%
+		+translateY(-50%)
+		pointer-events: none
+		opacity: 0
+
+		ul
+			width: 210px
+			position: absolute
+			top: 50%
+			+translateY(-50%)
+
+			li
+				display: block
+				text-align: left
+				height: 30px
+				margin-bottom: 30px
+				overflow: hidden
+
+				.en
+					display: block
+					font-size: 36px
+					+translateY(0px)
+					+transition(all 0.5s cubic-bezier(.165,.84,.44,1))
+					color: #ccc
+					opacity: 1
+
+				.tw
+					position: relative
+					left: 0
+					top: -25px
+					display: block
+					opacity: 0
+					font-size: 16px
+					+translateY(-10px)
+					+transition(all 0.3s cubic-bezier(.165,.84,.44,1))
+
+				a:hover
+					.en
+						opacity: 0
+						+translateY(10px)
+						
+					.tw
+						opacity: 1
+						+translateY(0px)
+
+.nav-bg
+	width: 0px
+	height: 100%
+	background: #fafafa
+	position: fixed
+	left: 80px
+	z-index: 9
+	+transition(all .8s cubic-bezier(.165,.84,.44,1))
+
+/*footer*/
+footer
+	position: fixed
+	bottom: 0
+	width: 100%
+	border-top: 1px solid #eee
+	font-size: 12px
+	color: #999
+	background: #f5f5f5
+	padding: 10px 0
+	z-index: -1
+
+	.footer-inner
+		margin: 0 100px 0 100px
+
+	.footer-in
+		text-align: center
+		
+/*grid*/
+.right
+	position: fixed
+	top: 0
+	right: 0
+	z-index: 4
+	width: 80px
+	height: 100%
+	background: #fafafa
+	border-left: 1px solid #eee
+
+.bggrid
+	margin: 0 80px
+	position: fixed
+	height: 100%
+	width: calc(100% - 160px)
+	top: 0
+	z-index: 0
+
+	.gridline
+		position: absolute
+		display: inline-block
+		height: 100%
+		border-right: 1px solid #eee
+
+		&:nth-child(1)
+			left: 20%
+
+		&:nth-child(2)
+			left: 50%
+			+translateX(-50%)
+
+		&:nth-child(3)
+			left: 80%
+
+/*scroll*/
+.scrolltop
+	position: fixed
+	bottom: 40px
+	right: 20px
+	color: #999
+	font-weight: 600
+	cursor: pointer
+	z-index: 5
+	background: rgba(255,255,255,0.8)
+	padding: 5px 5px 0px 5px
+
+	img
+		margin: auto
+
+.scrolldown
+	position: absolute
+	bottom: 15px
+	right: 40px
+	color: #ccc
+	cursor: pointer
+
+	&:before
+		content: ''
+		width: 20px
+		height: 1px
+		background: #ccc
+		display: inline-block
+		margin-right: 10px
+		vertical-align: middle
+		+transform(translateX(0px))
+		+transition(all .2s cubic-bezier(.165,.84,.44,1))
+
+	&:hover
+		color: #000
+
+		&:before
+			+transform(translateX(120px))
+			background: #000
+
+
+
+.change
+	position: fixed
+	top: 0
+	width: 100%
+	height: 100%
+	opacity: 1
+	z-index: 100
+
+	.show-page &
+		z-index: -1
+		+transition(z-index 0s 1.5s)
+
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		width: 100%
+		height: 100%
+		background: #dacdc2
+		+transition(width 1.2s cubic-bezier(.165,.84,.44,1))
+
+		.show-page &
+			width: 0
+
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		width: 100%
+		height: 100%
+		background: #f3ede8
+		z-index: -1
+		+transition(width 1.5s cubic-bezier(.165,.84,.44,1))
+
+		.show-page &
+			width: 0
+		
+
+//show-nav
+.header-on
+	background: #fafafa
+
+.nav-bg-on
+	width: 100%
+
+.show 
+	.menu, .berger
+		opacity: 0
+		pointer-events: none
+
+	.close, nav, .nav2 , .logo2, .nav-follow 
+		opacity: 1
+		pointer-events: auto
+
+	.logo
+		opacity: 0
+	
+	.logo2 a
+		opacity: 1
+		+scale(2,2)
+
+	.berger
+		.line
+			&:nth-child(1)
+				+transform(rotate(45deg) translateY(6px))
+			&:nth-child(2)
+				opacity: 0		
+			&:nth-child(3)
+				+transform(rotate(-45deg) translateY(-6px))
+
+
+
+
+
+//animation
+.logo2
+	opacity: 0
+	+transform(translateY(20px))
+
+.logo2
+	+transition(opacity 1.2s, transform 1s)
+	.show-nav &
+		opacity: 1
+		+transform(translate(0px,0px))
+
+
+nav ul li
+	opacity: 0
+	+transform(translateY(30px))
+
+nav ul li
+	+transition(opacity 1s, transform .8s)
+	.show-nav &
+		opacity: 1
+		+transform(translate(0px,0px))
+
+		&:nth-child(1)
+			+transition-delay(.2s)
+
+		&:nth-child(2)
+			+transition-delay(.4s)
+
+		&:nth-child(3)
+			+transition-delay(.6s)
+
+		&:nth-child(4)
+			+transition-delay(.8s)
+
+		&:nth-child(5)
+			+transition-delay(1s)
+
+.nav2 ul li
+	opacity: 0
+	+transform(translateY(30px))
+
+.nav2 ul li
+	+transition(opacity 1s, transform .8s)
+	.show-nav &
+		opacity: 1
+		+transform(translate(0px,0px))
+
+		&:nth-child(1)
+			+transition-delay(1.2s)
+
+		&:nth-child(2)
+			+transition-delay(1.4s)
+
+		&:nth-child(3)
+			+transition-delay(1.6s)
+
+.nav-follow 
+	opacity: 0
+	+transform(translateY(20px))
+
+.nav-follow 	
+	.show-nav & 
+		opacity: 1
+		+transition(opacity 1s, transform .8s)
+		+transform(translate(0px,-50%))
+		+transition-delay(1.8s)
+
+
+@media screen and (max-width: 1100px)
+	.main
+		margin-right: 0px
+		margin-left: 0px
+
+	.header
+		width: 100%
+		height: 80px
+		.menu
+			+rotate(0deg)
+			left: unset
+			right: 50px
+			+transform(translateY(-50%))
+		.close
+			+rotate(0deg)
+			left: unset
+			right: 50px
+			+transform(translateY(-50%))
+		&:hover
+			width: 100%
+			.menu
+				left: unset
+				right: 50px
+				+transform(translateY(-50%))
+			.close
+				left: unset
+				right: 50px
+				+transform(translateY(-50%))
+		.berger
+			opacity: 1
+			pointer-events: auto
+		nav
+			left: 25%
+			ul li 
+				.en
+					font-size: 24px
+				.tw
+					font-size: 14px
+		.nav2
+			right: 10%
+			ul li 
+				.en
+					font-size: 24px
+				.tw
+					font-size: 14px
+					top: -20px
+		.nav-follow
+			position: fixed
+			right: 50%
+			top: unset
+			bottom: 10%
+			+translate(50%,0)
+			.nav-fb,
+			.nav-ig,
+			.nav-line
+				display: inline-block
+			.nav-ig
+				margin: 0px 20px
+
+	.nav-bg
+		left: unset
+
+	.inner
+		margin: 0
+
+	.bggrid
+		margin: 0
+		width: 100%
+
+	footer
+		.footer-inner
+			margin: 0 80px 0 50px
+
+	.show 
+		.berger
+			opacity: 1
+			pointer-events: auto
+
+	.right
+		display: none
+
+	.bggrid
+		.gridline
+			&:nth-child(1)
+				left: 10%
+			&:nth-child(2)
+				left: 50%
+			&:nth-child(3)
+				left: 90%
+
+
+@media screen and (max-width: 720px)
+	.main
+		margin-bottom: 165px
+
+	.header
+		nav
+			ul li
+				margin-bottom: 20px
+
+		.nav2
+			right: 5%
+			ul li
+				margin-bottom: 20px
+
+		.logo2 a
+			top: 40px
+			+translate(-50%,0)
+		
+
+	footer
+		.footer-box2
+			position: unset
+			top: unset
+			float: unset
+			margin-top: 20px
+
+	.scrolldown
+		display: none
+
+	.scrolltop
+		right: 10px
+
+@media screen and (max-width: 640px)
+	.header
+
+		nav
+			left: 20%
+
+		.nav2
+			right: 0
+
+	footer
+		.footer-inner
+			margin: 0 0 0 50px
+
+@media screen and (max-width: 460px)
+	.header
+		nav
+			left: 50%
+			+translate(-50%,-50%)
+			ul li
+				text-align: center
+		.nav2
+			right: 5%
+			display: none
+		
+
+	footer
+		.footer-inner
+			margin: 0 0 0 30px
+
+	.scrolltop
+		right: 0px
+
+
+
+@media screen and (max-height: 460px)
+	.header
+		.logo2 a
+			top: 50%
+			+translate(-50%,-50%)
+

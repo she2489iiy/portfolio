@@ -1,0 +1,142 @@
+@import	compass/css3
+
+.top
+	position: relative
+	height: 100vh
+		
+.bg
+	position: absolute
+	right: 0
+	width: 80%
+	height: 85%
+	overflow: hidden
+	.pic
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		background-size: cover
+		background-position: center
+		+transform(scale(1.1) perspective(500px) translateZ(0px))
+		+transition(transform 0s cubic-bezier(0.25, 0.25, 0.75, 0.75))
+		
+		&.move-img
+			+transform(scale(1.1) perspective(500px) translateZ(-50px))
+			+transition-duration(5s)
+
+.top-slogn
+	font-size: 50px
+	position: absolute
+	left: 10%
+	bottom: 15%
+	z-index: 5
+
+.dot
+	position: fixed
+	right: 20px
+	top: 50%
+	+transform(translateY(-50%))
+	z-index: 5
+
+	li
+		position: relative
+		cursor: pointer
+		width: 5px
+		height: 5px
+		border-radius: 50%
+		background: #6c7c86
+		margin: 30px 15px
+
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 5px
+			height: 5px
+			border-radius: 50%
+			background-color: #b7d5f9
+			opacity: 0.3
+			+transform(translate(-50%,-50%))
+			+transition(all 0.3s)
+			z-index: -1
+
+		&:hover:after
+			width: 25px
+			height: 25px
+		
+
+//animation
+.move1
+	opacity: 0
+	+transform(translateY(-80px))
+
+.move2
+	opacity: 0
+	+transform(translateY(80px))
+
+.move3
+	opacity: 0
+	+transform(translateY(80px))
+
+.move4
+	opacity: 0
+	+transform(translateY(80px))
+
+
+
+.move1, .move2, .move3 , .move4
+	+transition(opacity 1s, transform 0.8s)
+	&.show
+		opacity: 1
+		+transform(translate(0px,0px))
+
+
+
+
+
+
+@media screen and (max-width: 1100px)
+
+
+@media screen and (max-width: 720px)
+	.bg
+		width: 100%
+		height: 100%
+
+	.top-slogn
+		left: 5%
+		color: #fff
+		font-size: 36px
+
+@media screen and (max-width: 460px)
+	
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
