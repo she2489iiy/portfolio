@@ -7,10 +7,11 @@
 .bg
 	position: absolute
 	right: 0
-	width: 80%
-	height: 85%
+	width: 85%
+	height: 90%
 	overflow: hidden
-	.pic
+
+	&-pic
 		width: 100%
 		height: 100%
 		position: absolute
@@ -25,11 +26,48 @@
 			+transition-duration(5s)
 
 .top-slogn
-	font-size: 50px
+	width: 250px
 	position: absolute
 	left: 10%
-	bottom: 15%
+	bottom: 30%
 	z-index: 5
+
+	img
+		width: 100%
+
+.wel1
+	position: absolute
+	top: 0
+	left: 0
+	opacity: 0
+	+animation(welout 5.2s cubic-bezier(.81,.15,.26,.99))
+
++keyframes(welout)
+	0%
+		opacity: 1
+	85%
+		opacity: 1
+
+	100%
+		opacity: 0
+
+.wel2
+	position: absolute
+	top: 0
+	left: 0
+	opacity: 1
+	+animation(welin 5.5s cubic-bezier(.81,.15,.26,.99))
+
++keyframes(welin)
+	0%
+		opacity: 0
+
+	70%
+		opacity: 0
+
+	100%
+		opacity: 1
+
 
 .dot
 	position: fixed
@@ -64,24 +102,136 @@
 		&:hover:after
 			width: 25px
 			height: 25px
+
+.level1
+	padding: 50px 0 100px
+
+	.concept
+		width: 30%
+		margin-left: 50%
+
+.level2
+	.middle-pic
+		position: relative
+		width: 80%
+		overflow: hidden
+		img
+			width: 105%
+	.concept
+		width: 30%
+		margin-left: 20%
+		padding: 100px 0
+
+.level3
+	padding: 150px 0 150px
+	.box1
+		display: flex
+		flex-direction: row-reverse
+	.middle-pic
+		position: relative
+		width: 40%
+		overflow: hidden
+		img
+			width: 105%
+	.concept
+		width: 40%
+		margin-left: 15%
+		padding: 100px 0
+	.concept-slogn
+		font-size: 38px
+		position: relative
+		top: 120px
+	.concept-slogn2
+		font-size: 38px
+		margin-left: 50px
+		position: relative
+		top: 160px
+
+.level4
+	padding: 100px 0
+	.title
+		text-align: center
+	.box2
+		display: flex
+		max-width: 60%
+		margin: auto
+		padding-top: 30px
+	.concept
+		width: 45%
+		margin: auto
+	.director-pic
+		position: relative
+		margin: auto
+		img
+			width: 100%
+	.concept-in
+		text-align: center
+		padding: 50px 0
+		width: 250px
+		margin: auto
+	.director-name
+		text-align: center
+		color: #a59180
+		font-size: 18px
+	.director-in
+		width: fit-content
+		margin: auto
+		padding-top: 30px
+		display: flex
+	.experience
+		margin-right: 35px
 		
 
 //animation
 .move1
 	opacity: 0
-	+transform(translateY(-80px))
+	+transform(translateY(80px))
+
+.move1
+	+transition(opacity .8s, transform 0.8s)
+	&.show
+		opacity: 1
+		+transform(translate(0px,0px))
 
 .move2
-	opacity: 0
-	+transform(translateY(80px))
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		width: 100%
+		height: 100%
+		background: #fff
+		+transition(width .8s)
+	&.show:after
+		width: 0
 
 .move3
-	opacity: 0
-	+transform(translateY(80px))
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: #fff
+		+transition(width .5s)
+	&.show:after
+		width: 0
 
 .move4
-	opacity: 0
-	+transform(translateY(80px))
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: #fff
+		+transition(height .8s)
+		+transition-delay(.3s)
+	&.show:after
+		height: 0
 
 
 
