@@ -32,7 +32,6 @@ a
 .en
 	font-size: 1em
 
-
 .speciall
 	font-family: Ovo, "Microsoft JhengHei" , Arial, Helvetica, sans-serif
 
@@ -47,7 +46,7 @@ a
 .main
 	margin-left: 80px
 	margin-right: 80px
-	margin-bottom: 117px
+	margin-bottom: 50px
 	background: #fff
 	overflow: hidden
 
@@ -91,6 +90,7 @@ a
 		+rotate(-90deg)
 		+transition(all .3s cubic-bezier(.165,.84,.44,1))
 		color: #021e2f
+
 		&:hover
 			color: #666
 
@@ -107,6 +107,7 @@ a
 		+rotate(-90deg)
 		+transition(all .3s cubic-bezier(.165,.84,.44,1))
 		color: #a59180
+
 		&:hover
 			color: #675b52
 
@@ -141,7 +142,7 @@ a
 		pointer-events: auto
 
 		.line
-			width: 10px
+			width: 11px
 			height: 2px
 			background-color: #ccc
 
@@ -245,54 +246,15 @@ a
 			.en
 				color: #aaa
 
-	.nav2
+	.talk
 		position: fixed
-		width: 210px
-		right: 20%
+		width: 250px
+		right: 15%
 		top: 50%
 		+translateY(-50%)
 		pointer-events: none
 		opacity: 0
 
-		ul
-			width: 210px
-			position: absolute
-			top: 50%
-			+translateY(-50%)
-
-			li
-				display: block
-				text-align: left
-				height: 30px
-				margin-bottom: 30px
-				overflow: hidden
-
-				.en
-					display: block
-					font-size: 36px
-					+translateY(0px)
-					+transition(all 0.5s cubic-bezier(.165,.84,.44,1))
-					color: #ccc
-					opacity: 1
-
-				.tw
-					position: relative
-					left: 0
-					top: -25px
-					display: block
-					opacity: 0
-					font-size: 16px
-					+translateY(-10px)
-					+transition(all 0.3s cubic-bezier(.165,.84,.44,1))
-
-				a:hover
-					.en
-						opacity: 0
-						+translateY(10px)
-						
-					.tw
-						opacity: 1
-						+translateY(0px)
 
 .nav-bg
 	width: 0px
@@ -359,7 +321,7 @@ footer
 /*scroll*/
 .scrolltop
 	position: fixed
-	bottom: 40px
+	bottom: 50px
 	right: 20px
 	color: #999
 	font-weight: 600
@@ -450,7 +412,7 @@ footer
 		opacity: 0
 		pointer-events: none
 
-	.close, nav, .nav2 , .logo2, .nav-follow 
+	.close, nav, .talk , .logo2, .nav-follow 
 		opacity: 1
 		pointer-events: auto
 
@@ -463,10 +425,13 @@ footer
 
 	.berger
 		.line
+
 			&:nth-child(1)
 				+transform(rotate(45deg) translateY(6px))
+
 			&:nth-child(2)
-				opacity: 0		
+				opacity: 0
+
 			&:nth-child(3)
 				+transform(rotate(-45deg) translateY(-6px))
 
@@ -478,9 +443,8 @@ footer
 .logo2
 	opacity: 0
 	+transform(translateY(20px))
-
-.logo2
 	+transition(opacity 1.2s, transform 1s)
+
 	.show-nav &
 		opacity: 1
 		+transform(translate(0px,0px))
@@ -489,9 +453,8 @@ footer
 nav ul li
 	opacity: 0
 	+transform(translateY(30px))
-
-nav ul li
 	+transition(opacity 1s, transform .8s)
+
 	.show-nav &
 		opacity: 1
 		+transform(translate(0px,0px))
@@ -511,35 +474,16 @@ nav ul li
 		&:nth-child(5)
 			+transition-delay(1s)
 
-.nav2 ul li
+.talk-in
 	opacity: 0
 	+transform(translateY(30px))
-
-.nav2 ul li
 	+transition(opacity 1s, transform .8s)
+
 	.show-nav &
 		opacity: 1
-		+transform(translate(0px,0px))
+		+transform(translate(0,0))
+		+transition-delay(1.2s)
 
-		&:nth-child(1)
-			+transition-delay(1.2s)
-
-		&:nth-child(2)
-			+transition-delay(1.4s)
-
-		&:nth-child(3)
-			+transition-delay(1.6s)
-
-.nav-follow 
-	opacity: 0
-	+transform(translateY(20px))
-
-.nav-follow 	
-	.show-nav & 
-		opacity: 1
-		+transition(opacity 1s, transform .8s)
-		+transform(translate(0px,-50%))
-		+transition-delay(1.8s)
 
 
 @media screen and (max-width: 1100px)
@@ -550,6 +494,7 @@ nav ul li
 	.header
 		width: 100%
 		height: 80px
+
 		.menu
 			+rotate(0deg)
 			left: unset
@@ -634,9 +579,6 @@ nav ul li
 
 
 @media screen and (max-width: 720px)
-	.main
-		margin-bottom: 165px
-
 	.header
 		nav
 			ul li
@@ -667,7 +609,6 @@ nav ul li
 
 @media screen and (max-width: 640px)
 	.header
-
 		nav
 			left: 20%
 
@@ -678,7 +619,13 @@ nav ul li
 		.footer-inner
 			margin: 0 0 0 50px
 
+	.scroll-top
+		right: 2%
+
 @media screen and (max-width: 460px)
+	.main
+		margin-bottom: 57px
+
 	.header
 		nav
 			left: 50%
@@ -694,8 +641,15 @@ nav ul li
 		.footer-inner
 			margin: 0 0 0 30px
 
+		.footer-in
+			line-height: 1.5em
+
+		span
+			display: block
+
 	.scrolltop
-		right: 0px
+		right: 5px
+		bottom: 60px
 
 
 

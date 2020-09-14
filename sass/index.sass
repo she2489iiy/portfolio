@@ -147,39 +147,64 @@
 		position: relative
 		top: 160px
 
-.level4
-	padding: 100px 0
+.work
+	padding: 100px 0 50px
+
 	.title
 		text-align: center
-	.box2
+
+	&-box
 		display: flex
+		flex-wrap: wrap
 		max-width: 60%
 		margin: auto
 		padding-top: 30px
-	.concept
+
+	&-list
+		cursor: pointer
 		width: 45%
 		margin: auto
-	.director-pic
+
+		&:hover
+			.sp:after
+				+transform(scaleX(1))
+				
+
+	&-pic
 		position: relative
 		margin: auto
 		img
 			width: 100%
-	.concept-in
+
+	&-concept
 		text-align: center
-		padding: 50px 0
-		width: 250px
-		margin: auto
-	.director-name
+		padding: 30px 0
+		margin: 0 10px
+
+	&-name
 		text-align: center
 		color: #a59180
 		font-size: 18px
-	.director-in
-		width: fit-content
-		margin: auto
-		padding-top: 30px
-		display: flex
-	.experience
-		margin-right: 35px
+
+		.sp
+			position: relative
+
+			&:after
+				content: ''
+				position: absolute
+				left: -10px
+				bottom: 0
+				height: 10px
+				width: 100%
+				@include background(linear-gradient(to right, #e0dfff, #f1d7ff))
+				padding: 0 10px
+				+transform(scaleX(0))
+				+transition(transform .5s ease-in-out)
+				z-index: -1
+
+
+	&-in
+		font-size: 12px
 		
 
 //animation
@@ -230,23 +255,88 @@
 		background: #fff
 		+transition(height .8s)
 		+transition-delay(.3s)
+
 	&.show:after
 		height: 0
 
 
-
 .move1, .move2, .move3 , .move4
 	+transition(opacity 1s, transform 0.8s)
+
 	&.show
 		opacity: 1
 		+transform(translate(0px,0px))
 
 
-
-
-
+@media screen and (max-width: 1500px)
+	.level3
+		.concept
+			margin-left: 0
+			.concept-slogn
+				font-size: 34px
+				top: 70px
+			.concept-slogn2
+				font-size: 34px
+				top: 90px
 
 @media screen and (max-width: 1100px)
+	.pg-title
+		left: 10%
+
+	.dot
+		display: none
+
+	.level1
+		.concept
+			margin-right: 10%
+			width: 40%
+
+	.level2
+		.middle-pic
+			width: 90%
+		.concept
+			margin-left: 10%
+			width: 40%
+
+	.level3
+		padding: 80px 0 100px
+		.concept
+			padding: 50px 0
+			.concept-slogn
+				font-size: 28px
+				top: 80px
+			.concept-slogn2
+				font-size: 28px
+				top: 90px
+
+	.work-box
+		max-width: 80%
+
+@media screen and (max-width: 900px)
+	.level1
+		padding: 80px 0 100px
+		.concept
+			width: 80%
+			float: unset
+			margin-right: unset
+			margin-left: 10%
+			+transform(translateX(0))
+
+	.level2
+		.concept
+			width: 80%
+			margin-left: 10%
+
+	.level3
+		.concept
+			width: unset
+			margin: auto
+			.concept-slogn
+				font-size: 24px
+				top: 30px
+			.concept-slogn2
+				font-size: 24px
+				top: 40px
 
 
 @media screen and (max-width: 720px)
@@ -256,10 +346,54 @@
 
 	.top-slogn
 		left: 5%
-		color: #fff
-		font-size: 36px
+
+	.level3
+		padding: 80px 0 30px
+		.box1
+			display: unset
+		.middle-pic
+			width: 70%
+			margin: auto
+		.concept
+			.concept-slogn
+				position: unset
+				text-align: center
+				margin-bottom: 10px
+			.concept-slogn2
+				position: unset
+				text-align: center
+				margin-left: 0
+
+	.work
+		padding: 50px 0
+
+		&-box
+			display: unset
+
+		&-list
+			width: 80%
+			padding-top: 30px
+
+		.title
+			margin-bottom: 30px
 
 @media screen and (max-width: 460px)
+	.top-slogn
+		left: 50%
+		bottom: 20%
+		+transform(translateX(-50%))
+
+	.level2
+		.middle-pic
+			width: 100%
+
+	.level3
+		padding: 0
+
+		.middle-pic
+			width: 90%
+
+
 	
 
 
