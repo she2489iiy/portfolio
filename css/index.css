@@ -177,6 +177,14 @@
   width: 25px;
   height: 25px;
 }
+.dot li.show {
+  background: #a393b1;
+}
+.dot li.show:after {
+  width: 25px;
+  height: 25px;
+  background-color: #cab7e8;
+}
 
 .level1 {
   padding: 50px 0 100px;

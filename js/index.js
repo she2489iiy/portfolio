@@ -23,14 +23,14 @@ $(function(){
 
 
 	//dot
-	//var num = $(".dot ul li").length;
+	var num = $(".dot ul li").length;
 
-	//for( i=0; i<=num; i++){ 
-		//$(".dot ul li:eq("+i+")").click({id:i}, function(e){
-			//page = e.data.id+1
-			//$("body,html").animate({scrollTop: $(".p0" + page).offset().top - 200},500)
-		//})
-	//}
+	for( i=0; i<=num; i++){ 
+		$(".dot ul li:eq("+i+")").click({id:i}, function(e){
+			page = e.data.id+1;
+			$("body,html").animate({ scrollTop: $(".p0" + page).offset().top},500);
+		})
+	}
 
 })
 
@@ -50,8 +50,6 @@ function setScroll(){
 
 		if(scroll > tCont - hWin*0.9){
 			$(this).addClass("show");
-		}else{
-			$(this).removeClass("show");
 		}
 
 		var hCont = $(this).outerHeight();
@@ -134,21 +132,21 @@ $(window).scroll(function(){
 	setScroll();
 
 	//dot
-	//if($(window).scrollTop() <= $("body,html").offset().top){
-		//$(".dot ul li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
-	//}else if($(window).scrollTop() > $("body,html").offset().top && $(window).scrollTop()<$(".p01").offset().top){
-    //$(".dot ul li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
-    //$(".dot ul li:eq(0)").addClass("show");
-  //}else if($(window).scrollTop() >= $(".p01").offset().top && $(window).scrollTop()<$(".p02").offset().top){
-   //$(".dot ul li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
-    //$(".dot ul li:eq(1)").addClass("show");
-  //}else if($(window).scrollTop() >= $(".p02").offset().top && $(window).scrollTop()<$(".p03").offset().top){
-    //$(".dot ul li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
-    //$(".dot ul li:eq(2)").addClass("show");
-  //}else if($(window).scrollTop() >= $(".p03").offset().top && $(window).scrollTop()<$(".p04").offset().top){
-    //$(".dot ul li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
-    //$(".dot ul li:eq(3)").addClass("show");
-  //}
+	if($(window).scrollTop() <= $("body,html").offset().top){
+		$(".dot li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
+	}else if($(window).scrollTop() > $("body,html").offset().top && $(window).scrollTop()<$(".p01").offset().top + 100){
+    $(".dot li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
+    $(".dot li:eq(0)").addClass("show");
+  }else if($(window).scrollTop() >= $(".p01").offset().top + 100 && $(window).scrollTop()<$(".p02").offset().top){
+   $(".dot li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
+    $(".dot li:eq(1)").addClass("show");
+  }else if($(window).scrollTop() >= $(".p02").offset().top && $(window).scrollTop()<$(".p03").offset().top){
+    $(".dot li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
+    $(".dot li:eq(2)").addClass("show");
+  }else if($(window).scrollTop() >= $(".p03").offset().top && $(window).scrollTop()<$(".p04").offset().top){
+    $(".dot li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
+    $(".dot li:eq(3)").addClass("show");
+  }
 	
 })
 
