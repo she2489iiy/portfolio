@@ -186,54 +186,87 @@
   background-color: #cab7e8;
 }
 
-.level1 {
-  padding: 50px 0 100px;
+.about {
+  padding: 100px 0 150px;
 }
-.level1 .concept {
-  width: 30%;
+.about-head {
+  display: flex;
+  margin: 0 20% 30px;
+}
+.about-pic {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-pic img {
+  width: 100px;
+}
+.about-in {
+  width: 50%;
+}
+.about-bt {
   margin-left: 50%;
 }
 
-.level2 .middle-pic {
+.skill-pic {
   position: relative;
   width: 80%;
   overflow: hidden;
 }
-.level2 .middle-pic img {
+.skill-pic img {
   width: 105%;
 }
-.level2 .concept {
-  width: 30%;
-  margin-left: 20%;
-  padding: 100px 0;
+.skill-concept {
+  margin: 0 20%;
+  padding: 100px 0 0;
+}
+.skill-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skill-list {
+  width: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 5px 50px;
+}
+.skill-list img {
+  width: 70px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.skill-detail {
+  font-size: 12px;
 }
 
-.level3 {
+.slogn {
+  background-color: #fafafa;
   padding: 150px 0 150px;
 }
-.level3 .box1 {
+.slogn-box1 {
   display: flex;
   flex-direction: row-reverse;
 }
-.level3 .middle-pic {
+.slogn-pic {
   position: relative;
   width: 40%;
   overflow: hidden;
 }
-.level3 .middle-pic img {
+.slogn-pic img {
   width: 105%;
 }
-.level3 .concept {
+.slogn-concept {
   width: 40%;
   margin-left: 15%;
   padding: 100px 0;
 }
-.level3 .concept-slogn {
+.slogn-in1 {
   font-size: 38px;
   position: relative;
   top: 120px;
 }
-.level3 .concept-slogn2 {
+.slogn-in2 {
   font-size: 38px;
   margin-left: 50px;
   position: relative;
@@ -264,12 +297,27 @@
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+.work-list:hover .work-pic img {
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 .work-pic {
   position: relative;
   margin: auto;
+  overflow: hidden;
 }
 .work-pic img {
   width: 100%;
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -moz-transition: -moz-transform 0.5s ease-in;
+  -o-transition: -o-transform 0.5s ease-in;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
 }
 .work-concept {
   text-align: center;
@@ -310,6 +358,10 @@
 .work-in {
   font-size: 12px;
 }
+.work-bt {
+  width: 82px;
+  margin-top: 20px;
+}
 
 .move1 {
   opacity: 0;
@@ -317,9 +369,6 @@
   -ms-transform: translateY(80px);
   -webkit-transform: translateY(80px);
   transform: translateY(80px);
-}
-
-.move1 {
   -moz-transition: opacity 0.8s, -moz-transform 0.8s;
   -o-transition: opacity 0.8s, -o-transform 0.8s;
   -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
@@ -403,14 +452,14 @@
 }
 
 @media screen and (max-width: 1500px) {
-  .level3 .concept {
+  .slogn-concept {
     margin-left: 0;
   }
-  .level3 .concept .concept-slogn {
+  .slogn-in1 {
     font-size: 34px;
     top: 70px;
   }
-  .level3 .concept .concept-slogn2 {
+  .slogn-in2 {
     font-size: 34px;
     top: 90px;
   }
@@ -420,34 +469,37 @@
     left: 10%;
   }
 
+  .bg {
+    width: 80%;
+  }
+
   .dot {
     display: none;
   }
 
-  .level1 .concept {
-    margin-right: 10%;
-    width: 40%;
+  .about-head {
+    margin: 0 10% 30px;
   }
 
-  .level2 .middle-pic {
+  .skill-pic {
     width: 90%;
   }
-  .level2 .concept {
+  .skill-concept {
     margin-left: 10%;
-    width: 40%;
+    width: 80%;
   }
 
-  .level3 {
+  .slogn {
     padding: 80px 0 100px;
   }
-  .level3 .concept {
+  .slogn-concept {
     padding: 50px 0;
   }
-  .level3 .concept .concept-slogn {
+  .slogn-in1 {
     font-size: 28px;
     top: 80px;
   }
-  .level3 .concept .concept-slogn2 {
+  .slogn-in2 {
     font-size: 28px;
     top: 90px;
   }
@@ -457,34 +509,20 @@
   }
 }
 @media screen and (max-width: 900px) {
-  .level1 {
-    padding: 80px 0 100px;
-  }
-  .level1 .concept {
-    width: 80%;
-    float: unset;
-    margin-right: unset;
-    margin-left: 10%;
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  .level2 .concept {
+  .skill-concept {
     width: 80%;
     margin-left: 10%;
   }
 
-  .level3 .concept {
+  .slogn-concept {
     width: unset;
     margin: auto;
   }
-  .level3 .concept .concept-slogn {
+  .slogn-in1 {
     font-size: 24px;
     top: 30px;
   }
-  .level3 .concept .concept-slogn2 {
+  .slogn-in2 {
     font-size: 24px;
     top: 40px;
   }
@@ -499,22 +537,44 @@
     left: 5%;
   }
 
-  .level3 {
+  .about-head {
+    display: block;
+  }
+  .about-pic {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .about-pic img {
+    z-index: 2;
+  }
+  .about-in {
+    width: 100%;
+  }
+  .about-bt {
+    width: 45px;
+    margin: auto;
+  }
+
+  .skill .title {
+    text-align: center;
+  }
+
+  .slogn {
     padding: 80px 0 30px;
   }
-  .level3 .box1 {
+  .slogn-box1 {
     display: unset;
   }
-  .level3 .middle-pic {
+  .slogn-pic {
     width: 70%;
     margin: auto;
   }
-  .level3 .concept .concept-slogn {
+  .slogn-in1 {
     position: unset;
     text-align: center;
     margin-bottom: 10px;
   }
-  .level3 .concept .concept-slogn2 {
+  .slogn-in2 {
     position: unset;
     text-align: center;
     margin-left: 0;
@@ -534,6 +594,15 @@
     margin-bottom: 30px;
   }
 }
+@media screen and (max-width: 640px) {
+  .skill-box {
+    display: block;
+  }
+
+  .skill-list {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 460px) {
   .top-slogn {
     left: 50%;
@@ -544,14 +613,14 @@
     transform: translateX(-50%);
   }
 
-  .level2 .middle-pic {
+  .skill-pic {
     width: 100%;
   }
 
-  .level3 {
+  .slogn {
     padding: 0;
   }
-  .level3 .middle-pic {
+  .slogn-pic {
     width: 90%;
   }
 }

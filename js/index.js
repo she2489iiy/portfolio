@@ -137,10 +137,10 @@ $(window).scroll(function(){
 	}else if($(window).scrollTop() > $("body,html").offset().top && $(window).scrollTop()<$(".p01").offset().top + 100){
     $(".dot li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
     $(".dot li:eq(0)").addClass("show");
-  }else if($(window).scrollTop() >= $(".p01").offset().top + 100 && $(window).scrollTop()<$(".p02").offset().top){
+  }else if($(window).scrollTop() >= $(".p01").offset().top + 100 && $(window).scrollTop()<$(".p02").offset().top + 150){
    $(".dot li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
     $(".dot li:eq(1)").addClass("show");
-  }else if($(window).scrollTop() >= $(".p02").offset().top && $(window).scrollTop()<$(".p03").offset().top){
+  }else if($(window).scrollTop() >= $(".p02").offset().top + 150 && $(window).scrollTop()<$(".p03").offset().top){
     $(".dot li").removeClass("show");//除了被點擊到的游標，其他都恢復成原來的顏色
     $(".dot li:eq(2)").addClass("show");
   }else if($(window).scrollTop() >= $(".p03").offset().top && $(window).scrollTop()<$(".p04").offset().top){

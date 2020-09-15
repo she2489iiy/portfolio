@@ -3,17 +3,16 @@
 
 /*font*/
 @import url('https://fonts.googleapis.com/css?family=Raleway:200')
-@import url('https://fonts.googleapis.com/css?family=Ovo')
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap')
 
 
 body
-	font-family: Raleway,Quicksand, "Microsoft JhengHei" , Arial, Helvetica, sans-serif
+	font-family: Raleway, Quicksand, "Microsoft JhengHei" , Arial, Helvetica, sans-serif
 	font-size: 0.9em 
 	letter-spacing: 0.1em
 	line-height: 2em
 	
-
 a
 	text-decoration: none
 	color: #666
@@ -33,7 +32,7 @@ a
 	font-size: 1em
 
 .speciall
-	font-family: Ovo, "Microsoft JhengHei" , Arial, Helvetica, sans-serif
+	font-family: Grandstander, "Microsoft JhengHei" , Arial, Helvetica, sans-serif
 
 .other-font
 	font-family: Pacifico, "Microsoft JhengHei" , Arial, Helvetica, sans-serif
@@ -42,6 +41,44 @@ a
 	font-size: 26px
 	color: #b2a193
 	margin-bottom: 50px
+
+.bt
+	cursor: pointer
+	margin: auto
+
+	span
+		position: relative
+		color: #999
+		font-size: 16px
+		font-weight: 600
+
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			bottom: -10px
+			height: 5px
+			width: 100%
+			background-color: #f1f1f1
+
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: -10px
+			height: 5px
+			width: 100%
+			background-color: #dacdc2 
+			+transform(scaleX(0))
+			+transform-origin(left)
+			+transition(all .5s ease-in-out)
+
+	&:hover
+		span
+			color: #dacdc2 
+
+			&:after
+				+transform(scaleX(1))
 
 .main
 	margin-left: 80px
@@ -161,99 +198,76 @@ a
 
 	.logo2
 		position: fixed
-		top: -30px
-		width: calc(100vw)
-		height: 100%
-		pointer-events: none
-		opacity: 0
-		z-index: -1
-		a
-			position: absolute
-			top: 50%
-			left: 50%
-			width: 55px
-			overflow: hidden
-			opacity: 0
-			+translate(-50%,-50%)
-			img
-				width: 100%
-
-	.nav-follow
-		position: fixed
-		right: 40px
 		top: 50%
+		left: 50%
+		width: 100px
 		pointer-events: none
 		opacity: 0
-		.nav-fb,
-		.nav-ig,
-		.nav-line
-			display: block
-			width: 15px
-			opacity: 0.3
-			&:hover
-				opacity: 0.5
-		.nav-ig
-			margin: 20px 0		
+		+translate(-50%,-50%)
+
+		img
+			width: 100%
 
 	nav
 		position: fixed
-		width: 200px
-		left: 25%
 		top: 50%
+		right: 65%
 		opacity: 0
 		pointer-events: none
 		+translateY(-50%)
 
-		ul
-			width: 200px
-			position: absolute
-			top: 50%
-			+translateY(-50%)
+		li
+			display: block
+			margin: 30px 0
+			overflow: hidden
 
-			li
+			.st
+				font-size: 14px
+
+			.en
 				display: block
-				text-align: left
-				height: 30px
-				margin-bottom: 30px
-				overflow: hidden
+				font-size: 36px
+				+translateY(0px)
+				+transition(all 0.5s cubic-bezier(.165,.84,.44,1))
+				color: #ccc
 
+			.tw
+				position: absolute
+				left: 0
+				bottom: 0
+				display: block
+				opacity: 0
+				font-size: 16px
+				+translateY(-10px)
+				+transition(all 0.3s cubic-bezier(.165,.84,.44,1))
+
+			a:hover
 				.en
-					display: block
-					font-size: 36px
-					+translateY(0px)
-					+transition(all 0.5s cubic-bezier(.165,.84,.44,1))
-					color: #ccc
+					opacity: 0
+					+translateY(10px)
 
 				.tw
-					position: relative
-					left: 0
-					top: -25px
-					display: block
-					opacity: 0
-					font-size: 16px
-					+translateY(-10px)
-					+transition(all 0.3s cubic-bezier(.165,.84,.44,1))
-
-				a:hover
-					.en
-						opacity: 0
-						+translateY(10px)
-
-					.tw
-						opacity: 1
-						+translateY(0px)
+					opacity: 1
+					+translateY(0px)
 		.on
 			.en
 				color: #aaa
 
-	.talk
+	.contact
 		position: fixed
 		width: 250px
-		right: 15%
+		left: 65%
 		top: 50%
 		+translateY(-50%)
 		pointer-events: none
-		opacity: 0
+		
+		a:hover
+			color: #000
+
+		&-title
+			font-weight: 600
+			color: #aaa
+
 
 
 .nav-bg
@@ -412,16 +426,15 @@ footer
 		opacity: 0
 		pointer-events: none
 
-	.close, nav, .talk , .logo2, .nav-follow 
+	.close, nav
 		opacity: 1
+		pointer-events: auto
+
+	.contact
 		pointer-events: auto
 
 	.logo
 		opacity: 0
-	
-	.logo2 a
-		opacity: 1
-		+scale(2,2)
 
 	.berger
 		.line
@@ -442,12 +455,13 @@ footer
 //animation
 .logo2
 	opacity: 0
-	+transform(translateY(20px))
-	+transition(opacity 1.2s, transform 1s)
+	+transform(translate(-50%, calc(-50% - 30px)))
+	
 
 	.show-nav &
 		opacity: 1
-		+transform(translate(0px,0px))
+		+transform(translate(-50%, -50%))
+		+transition(opacity 1.2s, transform 1s)
 
 
 nav ul li
@@ -474,15 +488,32 @@ nav ul li
 		&:nth-child(5)
 			+transition-delay(1s)
 
-.talk-in
+.contact-title
 	opacity: 0
 	+transform(translateY(30px))
-	+transition(opacity 1s, transform .8s)
+	+transition-delay(0s)
 
 	.show-nav &
 		opacity: 1
 		+transform(translate(0,0))
-		+transition-delay(1.2s)
+		+transition(opacity 1s, transform .8s)
+		+transition-delay(.6s)
+
+.contact-list
+	opacity: 0
+	+transform(translateY(30px))
+	+transition-delay(0s)
+
+	.show-nav &
+		opacity: 1
+		+transform(translate(0,0))
+		+transition(opacity 1s, transform .8s)
+
+		&:nth-child(1)
+			+transition-delay(.8s)
+
+		&:nth-child(2)
+			+transition-delay(1s)
 
 
 
@@ -500,51 +531,37 @@ nav ul li
 			left: unset
 			right: 50px
 			+transform(translateY(-50%))
+
 		.close
 			+rotate(0deg)
 			left: unset
 			right: 50px
 			+transform(translateY(-50%))
+
 		&:hover
 			width: 100%
+
 			.menu
 				left: unset
 				right: 50px
 				+transform(translateY(-50%))
+
 			.close
 				left: unset
 				right: 50px
 				+transform(translateY(-50%))
+
 		.berger
 			opacity: 1
 			pointer-events: auto
+
 		nav
-			left: 25%
-			ul li 
+			li 
 				.en
 					font-size: 24px
 				.tw
 					font-size: 14px
-		.nav2
-			right: 10%
-			ul li 
-				.en
-					font-size: 24px
-				.tw
-					font-size: 14px
-					top: -20px
-		.nav-follow
-			position: fixed
-			right: 50%
-			top: unset
-			bottom: 10%
-			+translate(50%,0)
-			.nav-fb,
-			.nav-ig,
-			.nav-line
-				display: inline-block
-			.nav-ig
-				margin: 0px 20px
+
 
 	.nav-bg
 		left: unset
@@ -584,15 +601,15 @@ nav ul li
 			ul li
 				margin-bottom: 20px
 
-		.nav2
-			right: 5%
-			ul li
-				margin-bottom: 20px
-
-		.logo2 a
+		.logo2
 			top: 40px
-			+translate(-50%,0)
+			width: 60px
+
+		nav
+			right: 60%
 		
+		.contact
+			left: 60%
 
 	footer
 		.footer-box2
@@ -610,10 +627,21 @@ nav ul li
 @media screen and (max-width: 640px)
 	.header
 		nav
-			left: 20%
+			left: 50%
+			right: unset
+			+translate(-50%,-50%)
 
-		.nav2
-			right: 0
+			li
+				margin: 20px 0
+
+		.contact
+			text-align: center
+			left: 50%
+			right: unset
+			bottom: 30px
+			top: unset
+			+translate(-50%,0)
+
 
 	footer
 		.footer-inner
@@ -653,9 +681,22 @@ nav ul li
 
 
 
-@media screen and (max-height: 460px)
+@media screen and (max-width: 720px) and (max-height: 460px)
 	.header
-		.logo2 a
-			top: 50%
-			+translate(-50%,-50%)
+		nav
+			left: unset
+			right: 60%
+			top: calc(50% + 40px)
+			+translate(0,-50%)
+
+			li
+				margin: 20px 0
+
+		.contact
+			text-align: left
+			left: 60%
+			right: unset
+			top: calc(50% + 20px)
+			bottom: unset
+			+translate(0,-50%)
 

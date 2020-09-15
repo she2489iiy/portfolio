@@ -112,45 +112,88 @@
 				background-color: #cab7e8
 
 
-.level1
-	padding: 50px 0 100px
+.about
+	padding: 100px 0 150px
 
-	.concept
-		width: 30%
+	&-head
+		display: flex
+		margin: 0 20% 30px
+
+	&-pic
+		width: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+
+		img
+			width: 100px
+
+	&-in
+		width: 50%
+
+	&-bt
 		margin-left: 50%
 
-.level2
-	.middle-pic
+.skill
+	&-pic
 		position: relative
 		width: 80%
 		overflow: hidden
+		
 		img
 			width: 105%
-	.concept
-		width: 30%
-		margin-left: 20%
-		padding: 100px 0
+	
+	&-concept
+		//width: 30%
+		margin: 0 20%
+		padding: 100px 0 0
 
-.level3
+	&-box
+		display: flex
+		flex-wrap: wrap
+
+	&-list
+		width: 50%
+		text-align: center
+		box-sizing: border-box
+		padding: 0 5px 50px
+
+		img
+			width: 70px
+			margin: auto
+			margin-bottom: 20px
+
+	&-detail
+		font-size: 12px
+
+
+.slogn
+	background-color: #fafafa
 	padding: 150px 0 150px
-	.box1
+
+	&-box1
 		display: flex
 		flex-direction: row-reverse
-	.middle-pic
+
+	&-pic
 		position: relative
 		width: 40%
 		overflow: hidden
+
 		img
 			width: 105%
-	.concept
+
+	&-concept
 		width: 40%
 		margin-left: 15%
 		padding: 100px 0
-	.concept-slogn
+
+	&-in1
 		font-size: 38px
 		position: relative
 		top: 120px
-	.concept-slogn2
+
+	&-in2
 		font-size: 38px
 		margin-left: 50px
 		position: relative
@@ -177,13 +220,20 @@
 		&:hover
 			.sp:after
 				+transform(scaleX(1))
-				
 
+			.work-pic img
+				+transform(scale(1.1))
+
+				
 	&-pic
 		position: relative
 		margin: auto
+		overflow: hidden
+
 		img
 			width: 100%
+			+transform(scale(1))
+			+transition(transform .5s ease-in)
 
 	&-concept
 		text-align: center
@@ -211,18 +261,19 @@
 				+transition(transform .5s ease-in-out)
 				z-index: -1
 
-
 	&-in
 		font-size: 12px
-		
+
+	&-bt
+		width: 82px
+		margin-top: 20px
 
 //animation
 .move1
 	opacity: 0
 	+transform(translateY(80px))
-
-.move1
 	+transition(opacity .8s, transform 0.8s)
+
 	&.show
 		opacity: 1
 		+transform(translate(0px,0px))
@@ -237,6 +288,7 @@
 		height: 100%
 		background: #fff
 		+transition(width .8s)
+
 	&.show:after
 		width: 0
 
@@ -250,6 +302,7 @@
 		height: 100%
 		background: #fff
 		+transition(width .5s)
+
 	&.show:after
 		width: 0
 
@@ -278,74 +331,75 @@
 
 
 @media screen and (max-width: 1500px)
-	.level3
-		.concept
+	.slogn
+		&-concept
 			margin-left: 0
-			.concept-slogn
-				font-size: 34px
-				top: 70px
-			.concept-slogn2
-				font-size: 34px
-				top: 90px
+
+		&-in1
+			font-size: 34px
+			top: 70px
+
+		&-in2
+			font-size: 34px
+			top: 90px
 
 @media screen and (max-width: 1100px)
 	.pg-title
 		left: 10%
 
+	.bg
+		width: 80%
+
 	.dot
 		display: none
 
-	.level1
-		.concept
-			margin-right: 10%
-			width: 40%
+	.about
+		&-head
+			margin: 0 10% 30px
 
-	.level2
-		.middle-pic
+
+	.skill
+		&-pic
 			width: 90%
-		.concept
-			margin-left: 10%
-			width: 40%
 
-	.level3
+		&-concept
+			margin-left: 10%
+			width: 80%
+
+	.slogn
 		padding: 80px 0 100px
-		.concept
+
+		&-concept
 			padding: 50px 0
-			.concept-slogn
-				font-size: 28px
-				top: 80px
-			.concept-slogn2
-				font-size: 28px
-				top: 90px
+
+		&-in1
+			font-size: 28px
+			top: 80px
+
+		&-in2
+			font-size: 28px
+			top: 90px
 
 	.work-box
 		max-width: 80%
 
 @media screen and (max-width: 900px)
-	.level1
-		padding: 80px 0 100px
-		.concept
-			width: 80%
-			float: unset
-			margin-right: unset
-			margin-left: 10%
-			+transform(translateX(0))
+	.skill-concept
+		width: 80%
+		margin-left: 10%
 
-	.level2
-		.concept
-			width: 80%
-			margin-left: 10%
-
-	.level3
-		.concept
+	.slogn
+		&-concept
 			width: unset
 			margin: auto
-			.concept-slogn
-				font-size: 24px
-				top: 30px
-			.concept-slogn2
-				font-size: 24px
-				top: 40px
+
+		&-in1
+			font-size: 24px
+			top: 30px
+
+		&-in2
+			font-size: 24px
+			top: 40px
 
 
 @media screen and (max-width: 720px)
@@ -356,22 +410,45 @@
 	.top-slogn
 		left: 5%
 
-	.level3
+	.about
+		&-head
+			display: block
+
+		&-pic
+			width: 100%
+			margin-bottom: 50px
+
+			img
+				z-index: 2
+
+		&-in
+			width: 100%
+
+		&-bt
+			width: 45px
+			margin: auto
+
+	.skill
+		.title
+			text-align: center
+
+
+	.slogn
 		padding: 80px 0 30px
-		.box1
+		&-box1
 			display: unset
-		.middle-pic
+
+		&-pic
 			width: 70%
 			margin: auto
-		.concept
-			.concept-slogn
-				position: unset
-				text-align: center
-				margin-bottom: 10px
-			.concept-slogn2
-				position: unset
-				text-align: center
-				margin-left: 0
+		&-in1
+			position: unset
+			text-align: center
+			margin-bottom: 10px
+		&-in2
+			position: unset
+			text-align: center
+			margin-left: 0
 
 	.work
 		padding: 50px 0
@@ -386,50 +463,27 @@
 		.title
 			margin-bottom: 30px
 
+@media screen and (max-width: 640px)
+	.skill-box
+		display: block
+
+	.skill-list
+		width: 100%
+
 @media screen and (max-width: 460px)
 	.top-slogn
 		left: 50%
 		bottom: 20%
 		+transform(translateX(-50%))
 
-	.level2
-		.middle-pic
-			width: 100%
+	.skill-pic
+		width: 100%
 
-	.level3
+	.slogn
 		padding: 0
 
-		.middle-pic
+		&-pic
 			width: 90%
 
 
 	
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
