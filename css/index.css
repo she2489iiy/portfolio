@@ -241,7 +241,8 @@
 }
 
 .slogn {
-  background-color: #fafafa;
+  background-size: cover;
+  background-position: center;
   padding: 150px 0 150px;
 }
 .slogn-box1 {
