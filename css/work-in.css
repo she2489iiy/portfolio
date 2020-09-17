@@ -2,11 +2,28 @@
   position: relative;
 }
 .project-name {
+  color: #666;
+  font-size: 20px;
+  font-weight: 600;
   text-align: center;
-  padding: 50px 0;
+  padding-top: 100px;
+}
+.project-in {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0 20%;
+}
+.project-link a {
+  color: #65619c;
+}
+.project-title {
+  color: #ccc;
+  font-weight: 600;
+  margin-right: 8px;
 }
 .project-content {
-  margin: 0 10%;
+  margin: 80px 10% 0;
 }
 .project-content img {
   width: 100%;
@@ -23,9 +40,6 @@
   -ms-transform: translateY(80px);
   -webkit-transform: translateY(80px);
   transform: translateY(80px);
-}
-
-.move1 {
   -moz-transition: opacity 0.8s, -moz-transform 0.8s;
   -o-transition: opacity 0.8s, -o-transform 0.8s;
   -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
@@ -39,209 +53,13 @@
   transform: translate(0px, 0px);
 }
 
-.move2:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  -moz-transition: width 0.8s;
-  -o-transition: width 0.8s;
-  -webkit-transition: width 0.8s;
-  transition: width 0.8s;
-}
-.move2.show:after {
-  width: 0;
-}
-
-.move3:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  -moz-transition: width 0.5s;
-  -o-transition: width 0.5s;
-  -webkit-transition: width 0.5s;
-  transition: width 0.5s;
-}
-.move3.show:after {
-  width: 0;
-}
-
-.move4:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  -moz-transition: height 0.8s;
-  -o-transition: height 0.8s;
-  -webkit-transition: height 0.8s;
-  transition: height 0.8s;
-  -moz-transition-delay: 0.3s;
-  -o-transition-delay: 0.3s;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-}
-.move4.show:after {
-  height: 0;
-}
-
-@media screen and (max-width: 1500px) {
-  .level3 .concept {
-    margin-left: 0;
-  }
-  .level3 .concept .concept-slogn {
-    font-size: 34px;
-    top: 70px;
-  }
-  .level3 .concept .concept-slogn2 {
-    font-size: 34px;
-    top: 90px;
-  }
-}
 @media screen and (max-width: 1100px) {
-  .bg {
-    width: 90%;
-  }
-
-  .pg-title {
-    left: 10%;
-  }
-
-  .level1 .concept {
-    margin-right: 10%;
-    width: 40%;
-  }
-
-  .level2 .middle-pic {
-    width: 90%;
-  }
-  .level2 .concept {
-    margin-left: 10%;
-    width: 40%;
-  }
-
-  .level3 {
-    padding: 80px 0 100px;
-  }
-  .level3 .concept {
-    padding: 50px 0;
-  }
-  .level3 .concept .concept-slogn {
-    font-size: 28px;
-    top: 80px;
-  }
-  .level3 .concept .concept-slogn2 {
-    font-size: 28px;
-    top: 90px;
-  }
-
-  .level4 .box2 {
-    max-width: 80%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .level1 {
-    padding: 80px 0 100px;
-  }
-  .level1 .concept {
-    width: 80%;
-    float: unset;
-    margin-right: unset;
-    margin-left: 10%;
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  .level2 .concept {
-    width: 80%;
-    margin-left: 10%;
-  }
-
-  .level3 .concept {
-    width: unset;
-    margin: auto;
-  }
-  .level3 .concept .concept-slogn {
-    font-size: 24px;
-    top: 30px;
-  }
-  .level3 .concept .concept-slogn2 {
-    font-size: 24px;
-    top: 40px;
+  .project-in {
+    margin: 0 10%;
   }
 }
 @media screen and (max-width: 720px) {
-  .level3 {
-    padding: 80px 0 30px;
-  }
-  .level3 .box1 {
-    display: unset;
-  }
-  .level3 .middle-pic {
-    width: 70%;
-    margin: auto;
-  }
-  .level3 .concept .concept-slogn {
-    position: unset;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .level3 .concept .concept-slogn2 {
-    position: unset;
-    text-align: center;
-    margin-left: 0;
-  }
-
-  .level4 {
-    padding: 50px 0;
-  }
-  .level4 .box2 {
-    display: unset;
-  }
-  .level4 .concept {
-    width: 80%;
-    padding-top: 50px;
-  }
-  .level4 .title {
-    margin-bottom: 30px;
-  }
-}
-@media screen and (max-width: 460px) {
-  .bg {
-    width: 100%;
-  }
-
-  .level2 .middle-pic {
-    width: 100%;
-  }
-
-  .level3 {
-    padding: 0;
-  }
-  .level3 .middle-pic {
-    width: 90%;
-  }
-
-  .level4 .concept-in {
-    padding: 50px 0;
-  }
-  .level4 .director-in {
-    padding-top: 10px;
-  }
-}
-@media screen and (max-height: 460px) {
-  .pg-title {
-    bottom: 5px;
+  .project-name {
+    font-size: 18px;
   }
 }

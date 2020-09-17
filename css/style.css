@@ -401,6 +401,16 @@ a {
   font-weight: 600;
   color: #aaa;
 }
+.header .contact-list {
+  margin: 12px 0;
+}
+.header .contact-icon {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 6px;
+  margin-right: 10px;
+}
 
 .nav-bg {
   width: 0px;
@@ -747,6 +757,11 @@ nav ul li {
   .main {
     margin-right: 0px;
     margin-left: 0px;
+    margin-top: 80px;
+  }
+
+  .top {
+    height: calc(100vh - 80px);
   }
 
   .header {

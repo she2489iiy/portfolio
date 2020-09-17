@@ -83,6 +83,7 @@
 		height: 5px
 		border-radius: 50%
 		background: #6c7c86
+		+transition(height .3s ease-in)
 		margin: 30px 15px
 
 		&:after
@@ -99,17 +100,38 @@
 			+transition(all 0.3s)
 			z-index: -1
 
-		&:hover:after
-			width: 25px
-			height: 25px
-
-		&.show
-			background: #a393b1
-
+		&:hover
 			&:after
 				width: 25px
 				height: 25px
+
+			.dot-text
+				opacity: 1
+				+transform(translate(0, -50%))
+
+		&.show
+			height: 12px
+			border-radius: 30%
+			background: #a393b1
+
+			&:after
 				background-color: #cab7e8
+
+	&-text
+		color: #666
+		font-weight: 600
+		font-size: 12px
+		line-height: 2em
+		position: absolute
+		right: 30px
+		top: 50%
+		background-color: rgba(250,250,250,0.9)
+		border: 1px solid #ccc
+		border-radius: 20px
+		padding: 0 8px
+		opacity: 0
+		+transform(translate(-10px, -50%))
+		+transition(transform .3s, opacity .3s)
 
 
 .about
@@ -159,7 +181,7 @@
 		padding: 0 5px 50px
 
 		img
-			width: 70px
+			height: 90px
 			margin: auto
 			margin-bottom: 20px
 
@@ -202,7 +224,7 @@
 		top: 160px
 
 .work
-	padding: 100px 0 50px
+	padding: 100px 0 80px
 
 	.title
 		text-align: center
@@ -217,7 +239,7 @@
 	&-list
 		cursor: pointer
 		width: 45%
-		margin: auto
+		margin: 0 auto 20px
 
 		&:hover
 			.sp:after
@@ -257,7 +279,7 @@
 				bottom: 0
 				height: 10px
 				width: 100%
-				@include background(linear-gradient(to right, #e0dfff, #f1d7ff))
+				@include background(linear-gradient(to right, #e8e7ff, #f7e7ff))
 				padding: 0 10px
 				+transform(scaleX(0))
 				+transition(transform .5s ease-in-out)
@@ -267,7 +289,7 @@
 		font-size: 12px
 
 	&-bt
-		width: 82px
+		width: 85px
 		margin-top: 20px
 
 //animation
@@ -453,7 +475,7 @@
 			margin-left: 0
 
 	.work
-		padding: 50px 0
+		padding: 50px 0 80px
 
 		&-box
 			display: unset
@@ -482,7 +504,7 @@
 		width: 100%
 
 	.slogn
-		padding: 0
+		padding: 30px 0
 
 		&-pic
 			width: 90%
