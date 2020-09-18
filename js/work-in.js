@@ -11,10 +11,8 @@ function setScroll(){
 	move.each(function(){
 		var tCont = $(this).offset().top;
 
-		if(scroll > tCont - hWin*0.8){
+		if(scroll > tCont - hWin*0.9){
 			$(this).addClass("show");
-		}else{
-			$(this).removeClass("show");
 		}
 
 	})

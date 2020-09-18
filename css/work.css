@@ -161,10 +161,10 @@
   -ms-transform: translateY(30px);
   -webkit-transform: translateY(30px);
   transform: translateY(30px);
-  -moz-transition: -moz-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
+  -moz-transition: -moz-transform 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   -moz-transition-delay: 0.1s;
   -o-transition-delay: 0.1s;
   -webkit-transition-delay: 0.1s;
@@ -212,18 +212,18 @@
 }
 
 .move4 {
-  -moz-transform: translateY(50px);
-  -ms-transform: translateY(50px);
-  -webkit-transform: translateY(50px);
-  transform: translateY(50px);
-  -moz-transition: -moz-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  -moz-transition-delay: 0.4s;
-  -o-transition-delay: 0.4s;
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+  -moz-transition: -moz-transform 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  -moz-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
 }
 .move4.show {
   -moz-transform: translateY(0px);
@@ -233,18 +233,18 @@
 }
 
 .move5 {
-  -moz-transform: translateY(50px);
-  -ms-transform: translateY(50px);
-  -webkit-transform: translateY(50px);
-  transform: translateY(50px);
-  -moz-transition: -moz-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  -moz-transition-delay: 0.6s;
-  -o-transition-delay: 0.6s;
-  -webkit-transition-delay: 0.6s;
-  transition-delay: 0.6s;
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+  -moz-transition: -moz-transform 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
 .move5.show {
   -moz-transform: translateY(0px);
@@ -263,9 +263,17 @@
   }
 }
 @media screen and (max-width: 720px) {
+  .select {
+    padding: 50px 0;
+  }
+
+  .work-content {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
   .work-box {
     position: relative;
-    padding: 10px 0;
+    padding-bottom: 50px;
     flex-direction: column-reverse;
   }
   .work-pic {
@@ -275,14 +283,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    padding: 20px 0;
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(165, 145, 128, 0.2);
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    margin: auto;
   }
   .work-number, .work-name, .work-more {
     color: #fff;
@@ -294,7 +303,7 @@
     color: #666;
   }
   .work a:hover .work-case {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.8);
   }
 
   .work a:nth-child(even) .work-box {
@@ -309,10 +318,6 @@
   .select-title,
   .select-box {
     width: 100%;
-  }
-
-  .work-content {
-    margin-bottom: 50px;
   }
 
   .work-name {
