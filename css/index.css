@@ -16,7 +16,6 @@
   position: absolute;
   top: 0;
   background-size: cover;
-  background-position: center;
   -moz-transform: scale(1.1) perspective(500px) translateZ(0px);
   -ms-transform: scale(1.1) perspective(500px) translateZ(0px);
   -webkit-transform: scale(1.1) perspective(500px) translateZ(0px);
@@ -25,6 +24,15 @@
   -o-transition: -o-transform 0s cubic-bezier(0.25, 0.25, 0.75, 0.75);
   -webkit-transition: -webkit-transform 0s cubic-bezier(0.25, 0.25, 0.75, 0.75);
   transition: transform 0s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}
+.bg-pic:nth-child(1) {
+  background-position: 49%;
+}
+.bg-pic:nth-child(2) {
+  background-position: 18%;
+}
+.bg-pic:nth-child(3) {
+  background-position: 52%;
 }
 .bg-pic.move-img {
   -moz-transform: scale(1.1) perspective(500px) translateZ(-50px);
@@ -584,7 +592,8 @@
     z-index: 2;
   }
   .about-in {
-    width: 100%;
+    width: 80%;
+    margin: auto;
   }
   .about-bt {
     width: 45px;
@@ -640,6 +649,10 @@
   }
 }
 @media screen and (max-width: 460px) {
+  .top {
+    height: calc(100vh - 80px);
+  }
+
   .top-slogn {
     left: 50%;
     bottom: 20%;
@@ -647,6 +660,10 @@
     -ms-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+  }
+
+  .about-in {
+    width: 100%;
   }
 
   .skill-pic {
@@ -658,5 +675,9 @@
   }
   .slogn-pic {
     width: 90%;
+  }
+
+  .work-bt {
+    width: 90px;
   }
 }

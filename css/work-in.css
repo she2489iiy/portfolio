@@ -75,5 +75,10 @@
 @media screen and (max-width: 720px) {
   .project-name {
     font-size: 18px;
+    padding-top: 50px;
+  }
+
+  .project-content {
+    margin-top: 50px;
   }
 }

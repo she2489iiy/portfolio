@@ -17,9 +17,16 @@
 		position: absolute
 		top: 0
 		background-size: cover
-		background-position: center
 		+transform(scale(1.1) perspective(500px) translateZ(0px))
 		+transition(transform 0s cubic-bezier(0.25, 0.25, 0.75, 0.75))
+
+		&:nth-child(1)
+			background-position: 49%
+		&:nth-child(2)
+			background-position: 18%
+
+		&:nth-child(3)
+			background-position: 52%
 		
 		&.move-img
 			+transform(scale(1.1) perspective(500px) translateZ(-50px))
@@ -448,7 +455,8 @@
 				z-index: 2
 
 		&-in
-			width: 100%
+			width: 80%
+			margin: auto
 
 		&-bt
 			width: 45px
@@ -497,10 +505,16 @@
 		width: 100%
 
 @media screen and (max-width: 460px)
+	.top
+		height: calc(100vh - 80px)
+
 	.top-slogn
 		left: 50%
 		bottom: 20%
 		+transform(translateX(-50%))
+
+	.about-in
+		width: 100%
 
 	.skill-pic
 		width: 100%
@@ -510,6 +524,9 @@
 
 		&-pic
 			width: 90%
+
+	.work-bt
+		width: 90px
 
 
 	
