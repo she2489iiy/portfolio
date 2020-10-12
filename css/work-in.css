@@ -45,6 +45,20 @@
   width: 100%;
   margin-bottom: 20px;
 }
+.project-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.project-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .project-bt {
   width: 42px;
   margin: 50px auto;
