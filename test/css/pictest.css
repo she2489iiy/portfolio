@@ -1,0 +1,34 @@
+/* 本機看不到ＱＱ，但有成功 */
+
+.picture_box {
+	mask: url('../images/fvmask2.png') no-repeat;
+	-webkit-mask: url('../images/fvmask2.png') no-repeat;
+	mask-position: 0 0;
+	-webkit-mask-position: 0 0;
+	opacity: 0;
+	-webkit-mask-size: 2000% 100%;
+	mask-size: 2000% 100%;
+	-moz-transition: opacity .6s ease-in;
+	-ms-transition: opacity .6s ease-in;
+	-o-transition: opacity .6s ease-in;
+	transition: opacity .6s ease-in;
+}
+
+.picture_box.show {
+	opacity: 1;
+	animation: fvMask .8s steps(19) 0s 1 forwards;
+	-webkit-animation: fvMask .8s steps(19) 0s 1 forwards;
+}
+
+@keyframes fvMask {
+	0%{
+		-webkit-mask-position: 0 0;
+	}
+	100%{
+		-webkit-mask-position: 100% 0;
+	}
+}
+
+
+
+
