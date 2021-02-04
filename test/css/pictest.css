@@ -1,4 +1,9 @@
 /* 本機看不到ＱＱ，但有成功 */
+/* 在 https://she2489iiy.github.io/portfolio/test/pictest.html */
+
+.picture{
+	margin-bottom: 500px;
+}
 
 .picture_box {
 	mask: url('../images/fvmask2.png') no-repeat;
@@ -8,6 +13,7 @@
 	opacity: 0;
 	-webkit-mask-size: 2000% 100%;
 	mask-size: 2000% 100%;
+	-webkit-transition: opacity .6s ease-in;
 	-moz-transition: opacity .6s ease-in;
 	-ms-transition: opacity .6s ease-in;
 	-o-transition: opacity .6s ease-in;
@@ -16,8 +22,17 @@
 
 .picture_box.show {
 	opacity: 1;
-	animation: fvMask .8s steps(19) 0s 1 forwards;
 	-webkit-animation: fvMask .8s steps(19) 0s 1 forwards;
+	animation: fvMask .8s steps(19) 0s 1 forwards;
+}
+
+@-webkit-keyframes fvMask {
+	0%{
+		-webkit-mask-position: 0 0;
+	}
+	100%{
+		-webkit-mask-position: 100% 0;
+	}
 }
 
 @keyframes fvMask {
@@ -28,6 +43,8 @@
 		-webkit-mask-position: 100% 0;
 	}
 }
+
+
 
 
 
