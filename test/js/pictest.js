@@ -15,7 +15,7 @@ function setScroll(){
 		var tCont = $(this).offset().top;
 
 		
-		if(scroll > tCont - hWin*0.85){
+		if(scroll > tCont - hWin*0.9){
 			$(this).addClass("show");
 		}else{
 			$(this).removeClass("show");
