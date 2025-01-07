@@ -30,11 +30,11 @@ $(function(){
 			$(".scrolltop").css({opacity: 0});
 		}
 
-		if(scrollTop > winHeight * 0.3 ){
-			$(".scrolldown").css({opacity: 0});
-		}else{
-			$(".scrolldown").css({opacity: 1});
-		}
+		//if(scrollTop > winHeight * 0.3 ){
+		//	$(".scrolldown").css({opacity: 0});
+		//}else{
+		//	$(".scrolldown").css({opacity: 1});
+		//}
 
 		if(bodyHeight == (winHeight + scrollTop) ){
 			$("footer").css({zIndex: 1});

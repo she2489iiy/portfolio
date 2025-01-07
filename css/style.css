@@ -88,7 +88,7 @@ a {
 .title {
   font-size: 26px;
   color: #b2a193;
-  margin: 0px 20px 20px;
+  margin: 0px 20px 30px;
 }
 
 .bt {
@@ -109,6 +109,7 @@ a {
   height: 5px;
   width: 100%;
   background-color: #f1f1f1;
+  border-radius: 10px;
 }
 .bt span:after {
   content: "";
@@ -118,6 +119,7 @@ a {
   height: 5px;
   width: 100%;
   background-color: #dacdc2;
+  border-radius: 10px;
   -moz-transform: scaleX(0);
   -ms-transform: scaleX(0);
   -webkit-transform: scaleX(0);
@@ -135,6 +137,7 @@ a {
   color: #dacdc2;
 }
 .bt:hover span:after {
+  border-radius: 10px;
   -moz-transform: scaleX(1);
   -ms-transform: scaleX(1);
   -webkit-transform: scaleX(1);
@@ -142,10 +145,10 @@ a {
 }
 
 .main {
-  margin-left: 50px;
-  margin-right: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
   margin-bottom: 50px;
-  background: #fff;
+  background-color: #ffffff;
   overflow: hidden;
 }
 
@@ -160,6 +163,8 @@ a {
   height: 100%;
   background: #fafafa;
   border-right: 1px solid #eee;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   -moz-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -412,6 +417,7 @@ a {
 .header nav .on .en {
   color: #aaa;
 }
+
 .header .contact {
   position: fixed;
   width: 250px;
@@ -464,7 +470,7 @@ footer {
   color: #999;
   background: #f5f5f5;
   padding: 10px 0;
-  z-index: -1;
+  z-index: -2;
 }
 footer .footer-inner {
   margin: 0 100px 0 100px;
@@ -481,6 +487,8 @@ footer .footer-in {
   z-index: 4;
   width: 50px;
   height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   background: #fafafa;
   border-left: 1px solid #eee;
 }
@@ -491,7 +499,7 @@ footer .footer-in {
   height: 100%;
   width: calc(100% - 100px);
   top: 0;
-  z-index: 0;
+  z-index: -1;
 }
 .bggrid .gridline {
   position: absolute;
@@ -631,6 +639,8 @@ footer .footer-in {
 }
 .show .menu_box {
   left: -3px;
+  border-color: #b3bafe;
+  background-color: #b3bafe;
 }
 
 .show .close, .show nav {
@@ -791,8 +801,8 @@ nav ul li {
 
 @media screen and (max-width: 1100px) {
   .main {
-    margin-right: 0px;
-    margin-left: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
     margin-top: 80px;
   }
 
