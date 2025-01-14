@@ -53,11 +53,25 @@
   left: 20px;
   width: 300px;
   height: 180px;
-  background-color: rgba(256, 256, 256, 0.5);
   border-radius: 20px;
   box-sizing: border-box;
-  filter: blur(3px);
   padding: 20px;
+  z-index: 2;
+}
+.about:after{
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background-color: rgba(256, 256, 256, 0.7);
+  border-radius: 20px;
+  filter: blur(0.5px);
+  z-index: 0;
+}
+.about-text{
+  position: relative;
   z-index: 2;
 }
 
@@ -243,33 +257,6 @@
   transition: transform 0.3s, opacity 0.3s;
 }
 
-/*about
-.about {
-  padding: 100px 0 150px;
-}
-.about-head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 20% 30px;
-}
-.about-pic {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.about-pic img {
-  width: 100px;
-}
-.about-in {
-  width: 50%;
-}
-.about-bt {
-  margin-left: 50%;
-}
-
-*/
 
 .skill{
   position: relative;
@@ -278,13 +265,16 @@
 .skill_box{
   display: flex;
   flex-wrap: wrap;
-
 }
 .skill_work{
   border-radius: 20px;
   box-sizing: border-box;
   padding-bottom: 20%;
   margin: 0 0 20px 20px;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
 }
 
 .skill_work:nth-child(1){
@@ -294,14 +284,26 @@
 .skill_work:nth-child(2){
   width: 20%;
   background-color: #dcdcdc;
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 .skill_work:nth-child(3){
   width: 20%;
   background-color: #b3bafe;
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 .skill_work:nth-child(4){
   width: 20%;
   background-color: #b3bafe;
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 .skill_work:nth-child(5){
   width: calc(60% - 80px);
@@ -310,76 +312,23 @@
 .skill_work:nth-child(6){
   width: 20%;
   background-color: #dcdcdc;
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.skill_work:nth-child(2):hover,
+.skill_work:nth-child(3):hover,
+.skill_work:nth-child(4):hover,
+.skill_work:nth-child(6):hover {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 
 
-/* old skill
-.skill-pic {
-  position: relative;
-  width: 80%;
-  overflow: hidden;
-}
-.skill-pic img {
-  width: 100%;
-}
-.skill-concept {
-  margin: 0 20%;
-  padding: 100px 0 0;
-}
-.skill-box {
-  display: flex;
-  flex-wrap: wrap;
-}
-.skill-list {
-  width: 50%;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 0 5px 50px;
-}
-.skill-list img {
-  height: 90px;
-  margin: auto;
-  margin-bottom: 20px;
-}
-.skill-detail {
-  font-size: 12px;
-}
-*/
-
-.slogn {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0 150px;
-}
-.slogn-box1 {
-  display: flex;
-  flex-direction: row-reverse;
-}
-.slogn-pic {
-  position: relative;
-  width: 40%;
-  overflow: hidden;
-}
-.slogn-pic img {
-  width: 100%;
-}
-.slogn-concept {
-  width: 40%;
-  margin-left: 15%;
-  padding: 100px 0;
-}
-.slogn-in1 {
-  font-size: 38px;
-  position: relative;
-  top: 120px;
-}
-.slogn-in2 {
-  font-size: 38px;
-  margin-left: 50px;
-  position: relative;
-  top: 160px;
-}
 
 .work {
   padding: 100px 0 80px;
@@ -421,20 +370,21 @@
   margin: auto;
   overflow: hidden;
 }
+
 .work-pic img {
   width: 100%;
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
   transform: scale(1);
-  -moz-transition: -moz-transform 0.5s ease-in;
-  -o-transition: -o-transform 0.5s ease-in;
-  -webkit-transition: -webkit-transform 0.5s ease-in;
-  transition: transform 0.5s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-in;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
 }
 .work-concept {
   text-align: center;
-  padding: 30px 0;
+  padding: 20px 0;
   margin: 0 10px;
 }
 .work-name {
@@ -457,9 +407,7 @@
   height: 30px;
   width: 100%;
   border-radius: 20px;
-  /*background-color: #b3bafe;*/
-  opacity: 0;
-  
+  opacity: 0; 
   /*background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZTdmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y3ZTdmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #e8e7ff), color-stop(100%, #f7e7ff));
   background: -moz-linear-gradient(left, #e8e7ff, #f7e7ff);
@@ -548,15 +496,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
-  -moz-transition: height 0.8s;
-  -o-transition: height 0.8s;
-  -webkit-transition: height 0.8s;
-  transition: height 0.8s;
-  -moz-transition-delay: 0.3s;
-  -o-transition-delay: 0.3s;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  background: #cfd4ff;
+  -moz-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 .move4.show:after {
   height: 0;
@@ -576,26 +524,14 @@
   transform: translate(0px, 0px);
 }
 
-@media screen and (max-width: 1500px) {
-  .slogn-concept {
-    margin-left: 0;
-  }
-  .slogn-in1 {
-    font-size: 34px;
-    top: 70px;
-  }
-  .slogn-in2 {
-    font-size: 34px;
-    top: 90px;
-  }
-}
+
 @media screen and (max-width: 1100px) {
-  .pg-title {
-    left: 10%;
+  .top {
+    height: calc(90vh - 120px);
   }
 
-  .bg {
-    width: 80%;
+  .pg-title {
+    left: 10%;
   }
 
   .dot {
@@ -609,104 +545,25 @@
   .skill-pic {
     width: 90%;
   }
-  .skill-concept {
-    margin-left: 10%;
-    width: 80%;
-  }
-
-  .slogn {
-    padding: 80px 0 100px;
-  }
-  .slogn-concept {
-    padding: 50px 0;
-  }
-  .slogn-in1 {
-    font-size: 28px;
-    top: 80px;
-  }
-  .slogn-in2 {
-    font-size: 28px;
-    top: 90px;
+  .skill .title {
+    text-align: center;
   }
 
   .work-box {
     max-width: 80%;
   }
 }
-@media screen and (max-width: 900px) {
-  .skill-concept {
-    width: 80%;
-    margin-left: 10%;
-  }
-
-  .slogn-concept {
-    width: unset;
-    margin: auto;
-  }
-  .slogn-in1 {
-    font-size: 24px;
-    top: 30px;
-  }
-  .slogn-in2 {
-    font-size: 24px;
-    top: 40px;
-  }
-}
 @media screen and (max-width: 720px) {
-  .bg {
-    width: 100%;
-    height: 100%;
+  .skill_work:nth-child(1){
+    width: calc(100% - 40px);
   }
 
-  .top-slogn {
-    left: 5%;
+  .skill_work:nth-child(2),
+  .skill_work:nth-child(3){
+    width: calc(50% - 30px);
   }
 
-  .about-head {
-    display: block;
-  }
-  .about-pic {
-    width: 100%;
-    margin-bottom: 50px;
-  }
-  .about-pic img {
-    z-index: 2;
-  }
-  .about-in {
-    width: 80%;
-    margin: auto;
-  }
-  .about-bt {
-    width: 45px;
-    margin: auto;
-  }
-
-  .skill .title {
-    text-align: center;
-  }
-
-  .slogn {
-    padding: 80px 0 30px;
-  }
-  .slogn-box1 {
-    display: unset;
-  }
-  .slogn-pic {
-    width: 70%;
-    margin: auto;
-  }
-  .slogn-in1 {
-    position: unset;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .slogn-in2 {
-    position: unset;
-    text-align: center;
-    margin-left: 0;
-  }
-
-  .work {
+.work {
     padding: 50px 0 80px;
   }
   .work-box {
@@ -721,42 +578,9 @@
   }
 }
 @media screen and (max-width: 640px) {
-  .skill-box {
-    display: block;
-  }
 
-  .skill-list {
-    width: 100%;
-  }
 }
 @media screen and (max-width: 460px) {
-  .top {
-    height: calc(100vh - 80px);
-  }
-
-  .top-slogn {
-    left: 50%;
-    bottom: 20%;
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-
-  .about-in {
-    width: 100%;
-  }
-
-  .skill-pic {
-    width: 100%;
-  }
-
-  .slogn {
-    padding: 30px 0;
-  }
-  .slogn-pic {
-    width: 90%;
-  }
 
   .work-bt {
     width: 90px;
