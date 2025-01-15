@@ -86,7 +86,7 @@ a {
 }
 
 .title {
-  font-size: 32px;
+  font-size: 40px;
   color: #b3bafe;
   margin: 0px 20px 30px;
 }
@@ -821,6 +821,13 @@ nav ul li {
   -o-transition-delay: 1s;
   -webkit-transition-delay: 1s;
   transition-delay: 1s;
+}
+
+@media screen and (max-width: 1400px) {
+  .title {
+    font-size: 32px;
+  }
+
 }
 
 @media screen and (max-width: 1100px) {
