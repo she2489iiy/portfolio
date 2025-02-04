@@ -49,7 +49,7 @@
 
 .about{
   position: absolute;
-  bottom: 70px;
+  top: 20px;
   left: 20px;
   width: 300px;
   height: 180px;
@@ -301,26 +301,14 @@
 .skill_work:nth-child(2){
   width: 20%;
   background-color: #dcdcdc;
-  -moz-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
 }
 .skill_work:nth-child(3){
   width: 20%;
   background-color: #b3bafe;
-  -moz-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
 }
 .skill_work:nth-child(4){
   width: 20%;
   background-color: #b3bafe;
-  -moz-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
 }
 .skill_work:nth-child(5){
   width: calc(60% - 80px);
@@ -329,23 +317,7 @@
 .skill_work:nth-child(6){
   width: 20%;
   background-color: #dcdcdc;
-  -moz-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
 }
-.skill_work:nth-child(2):hover,
-.skill_work:nth-child(3):hover,
-.skill_work:nth-child(4):hover,
-.skill_work:nth-child(6):hover {
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-
-
-
 
 .work {
   padding: 100px 0 80px;
@@ -363,12 +335,10 @@
 .work-list {
   cursor: pointer;
   width: 40%;
-  margin: 0 auto 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
 }
-.work-list:hover .work-name{
-  color:#ffffff;
-}
-.work-list:hover .sp:after {
+.work-list:hover .work-name .wname1:after {
   -moz-transform: scaleX(1);
   -ms-transform: scaleX(1);
   -webkit-transform: scaleX(1);
@@ -380,6 +350,12 @@
   -ms-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+.work-list:hover .work-link {
+  background: #647bff; 
+  background: -moz-linear-gradient(to right, #647bff, #dfd4f2);
+  background: -webkit-linear-gradient(to right, #647bff, #dfd4f2); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #647bff, #dfd4f2);
 }
 .work-pic {
   position: relative;
@@ -400,23 +376,40 @@
   transition: transform 0.3s ease-in;
 }
 .work-concept {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px 0;
   margin: 0 10px;
 }
 .work-name {
-  text-align: center;
   color: #000000;
+  line-height: 1.5em;
+}
+.work-link {
+  width: 36px;
+  height: 36px;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  margin-top: -10px;
+}
+.work-name .wname1,
+.work-name .wname2 {
+  display: block;
+}
+.work-name .wname1 {
+  position: relative;
   font-size: 18px;
   -moz-transition: color 0.3s;
   -o-transition: color 0.3s;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-.work-name .sp {
-  position: relative;
+.work-name .wname2 {
+  font-size: 14px;
+  color: #647bff;
 }
-.work-name .sp:after {
+.work-name .wname1:after {
   content: "";
   position: absolute;
   top: -5px;
@@ -430,10 +423,7 @@
   background: -moz-linear-gradient(left, #e8e7ff, #f7e7ff);
   background: -webkit-linear-gradient(left, #e8e7ff, #f7e7ff);
   background: linear-gradient(to right, #e8e7ff, #f7e7ff);*/
-  background: #647bff; 
-  background: -moz-linear-gradient(to right, #647bff, #dfd4f2);
-  background: -webkit-linear-gradient(to right, #647bff, #dfd4f2); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #647bff, #dfd4f2);
+  
   padding: 0 10px;
   -moz-transform: scaleX(0.3);
   -ms-transform: scaleX(0.3);
@@ -447,10 +437,10 @@
 }
 .work-in {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 12px;
-  color: #000000;
+  top: 15px;
+  left: 15px;
+  font-size: 14px;
+  color: #647bff;
   background-color: #ffffff;
   border-radius: 20px;
   padding: 0 10px;
@@ -479,8 +469,10 @@
   left: -20px;
   bottom: -9px;
 }
+
 .work-bt {
-  width: 85px;
+  width: 120px;
+  text-align: center;
   margin-top: 20px;
 }
 
@@ -544,11 +536,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #cfd4ff;
-  -moz-transition: height 0.5s;
-  -o-transition: height 0.5s;
-  -webkit-transition: height 0.5s;
-  transition: height 0.5s;
+  background: #fff;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   -moz-transition-delay: 0.2s;
   -o-transition-delay: 0.2s;
   -webkit-transition-delay: 0.2s;
