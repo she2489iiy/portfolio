@@ -189,9 +189,24 @@
     opacity: 1;
   }
 }
+
+/* right */
+.right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  width: 80px;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: #fafafa;
+  border-left: 1px solid #eee;
+}
+
 .dot {
   position: fixed;
-  right: 9px;
+  right: 23px;
   top: 50%;
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -202,15 +217,15 @@
 .dot li {
   position: relative;
   cursor: pointer;
-  width: 5px;
-  height: 5px;
+  width: 8px;
+  height: 8px;
   border-radius: 10px;
   background: #aaaaaa;
   -moz-transition: height 0.3s ease-in;
   -o-transition: height 0.3s ease-in;
   -webkit-transition: height 0.3s ease-in;
   transition: height 0.3s ease-in;
-  margin: 30px 15px;
+  margin: 50px 15px;
 }
 .dot li:after {
   content: "";
@@ -232,8 +247,8 @@
   z-index: -1;
 }
 .dot li:hover:after {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }
 .dot li:hover .dot-text {
@@ -244,7 +259,7 @@
   transform: translate(0, -50%);
 }
 .dot li.show {
-  height: 12px;
+  height: 15px;
   border-radius: 10px;
   background: #647bff;
 }
@@ -254,10 +269,10 @@
 .dot-text {
   color: #666;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 2em;
   position: absolute;
-  right: 20px;
+  right: 35px;
   top: 50%;
   background-color: rgba(250, 250, 250, 0.9);
   border: 1px solid #ccc;
@@ -575,6 +590,30 @@
     display: block;
   }
 
+  .dot{
+    width: 5px;
+    height: 5px;
+    right: 9px;
+  }
+
+  .dot li.show {
+    height: 12px;
+  }
+
+  .dot-text {
+    font-size: 12px;
+    right: 20px;
+  }
+
+  .dot li:hover:after {
+    width: 25px;
+    height: 25px;
+  }
+
+  .right{
+    width: 50px;
+  }
+
 }
 
 
@@ -610,6 +649,23 @@
     max-width: 80%;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .work {
+    padding: 50px 0 80px;
+  }
+  .work-box {
+    display: unset;
+  }
+  .work-list {
+    width: 70%;
+    padding-top: 30px;
+  }
+  .work .title {
+    margin-bottom: 30px;
+  }
+}
+
 @media screen and (max-width: 720px) {
   .top-text{
     width: 60%;
@@ -624,19 +680,11 @@
     width: calc(50% - 30px);
   }
 
-.work {
-    padding: 50px 0 80px;
-  }
-  .work-box {
-    display: unset;
-  }
   .work-list {
     width: 80%;
-    padding-top: 30px;
   }
-  .work .title {
-    margin-bottom: 30px;
-  }
+
+  
 }
 @media screen and (max-width: 640px) {
 
