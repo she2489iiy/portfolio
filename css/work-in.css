@@ -15,7 +15,7 @@
   margin: 0 20%;
 }
 .project-link a {
-  color: #65619c;
+  color: #647bff;
 }
 .project-title {
   color: #ccc;
@@ -34,7 +34,10 @@
   left: -10px;
   width: 3px;
   height: calc(100% - 5px);
-  background-color: #dea4a4;
+  background: #647bff; 
+  background: -moz-linear-gradient(to top, #647bff, #dfd4f2);
+  background: -webkit-linear-gradient(to top, #647bff, #dfd4f2); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #647bff, #dfd4f2);
 }
 .project-content {
   width: 80%;
@@ -86,6 +89,10 @@
 @media screen and (max-width: 1100px) {
   .project-in {
     margin: 0 10%;
+  }
+
+  .project-content {
+    width: 90%;
   }
 }
 @media screen and (max-width: 720px) {

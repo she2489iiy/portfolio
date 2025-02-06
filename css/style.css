@@ -47,12 +47,12 @@ img {
   -webkit-touch-callout: none;
 }
 
-/*font */
+/* font */
 body {
   font-family: Raleway, Quicksand, "Microsoft JhengHei", Arial, Helvetica, sans-serif;
   font-size: 0.9em;
   letter-spacing: 0.05em;
-  line-height: 2em;
+  /*line-height: 2em;*/
 }
 
 a {
@@ -86,7 +86,7 @@ a {
 }
 
 .title {
-  font-size: 50px;
+  font-size: 70px;
   color: #b3bafe;
   margin: 0px 20px 30px;
 }
@@ -174,27 +174,13 @@ a {
 }
 .header .logo {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 60px;
+  top: 20px;
+  left: 5px;
+  width: 70px;
   overflow: hidden;
-  -moz-transform: scale(1, 1);
-  -ms-transform: scale(1, 1);
-  -webkit-transform: scale(1, 1);
-  transform: scale(1, 1);
-  -moz-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .header .logo img {
   width: 100%;
-}
-.header .logo:hover {
-  -moz-transform: scale(1.1, 1.1);
-  -ms-transform: scale(1.1, 1.1);
-  -webkit-transform: scale(1.1, 1.1);
-  transform: scale(1.1, 1.1);
 }
 
 .header .menu_box {
@@ -248,7 +234,6 @@ a {
 .header .close {
   display: none;
   position: absolute;
-  top: 0;
   left: 16px;
   pointer-events: none;
   cursor: pointer;
@@ -313,11 +298,9 @@ a {
   transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .header:hover {
-  width: 70px;
+  width: 90px;
 }
-.header:hover .logo {
-  left: 15px;
-}
+
 .header:hover .menu_box {
   left: -15px;
   /*border-color: #b3bafe;*/
@@ -337,10 +320,7 @@ a {
   background-color: #ffffff;
 }
 .header:active {
-  width: 70px;
-}
-.header:active .logo {
-  left: 20px;
+  width: 100px;
 }
 .header:active .menu_box {
   left: -10px;
@@ -350,7 +330,7 @@ a {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 100px;
+  width: 150px;
   pointer-events: none;
   opacity: 0;
   -moz-transform: translate(-50%, -50%);
@@ -378,11 +358,11 @@ a {
   overflow: hidden;
 }
 .header nav li .st {
-  font-size: 14px;
+  font-size: 24px;
 }
 .header nav li .en {
   display: block;
-  font-size: 36px;
+  font-size: 60px;
   -moz-transform: translateY(0px);
   -ms-transform: translateY(0px);
   -webkit-transform: translateY(0px);
@@ -399,7 +379,7 @@ a {
   bottom: 0;
   display: block;
   opacity: 0;
-  font-size: 20px;
+  font-size: 30px;
   -moz-transform: translateY(-10px);
   -ms-transform: translateY(-10px);
   -webkit-transform: translateY(-10px);
@@ -429,7 +409,7 @@ a {
 
 .header .contact {
   position: fixed;
-  width: 250px;
+  min-width: 250px;
   left: 65%;
   top: 50%;
   -moz-transform: translateY(-50%);
@@ -442,12 +422,12 @@ a {
   color: #000;
 }
 .header .contact-title {
-  font-size: 32px;
+  font-size: 56px;
   color: #b3bafe;
-  padding-bottom: 10px;
 }
 .header .contact-list {
-  margin: 12px 0;
+  font-size: 24px;
+  margin: 30px 0;
 }
 .header .contact-icon {
   color: #666;
@@ -551,6 +531,7 @@ footer .footer-in {
   right: 40px;
   color: #ccc;
   cursor: pointer;
+  font-size: 18px;
 }
 .scrolldown:before {
   content: "";
@@ -835,6 +816,10 @@ nav ul li {
   .header:hover{
     width: 60px;
   }
+  
+  .header:active {
+    width: 70px;
+  }
 
   .header .menu_box{
     height: 75px;
@@ -842,7 +827,6 @@ nav ul li {
     position: absolute;
     top: 50%;
     left: -25px;
-
   }
 
   .header:hover .menu_box{
@@ -853,10 +837,49 @@ nav ul li {
     width: 60px;
   }
 
+  .show .menu_box{
+    left: -15px;
+  }
+
+  .header .logo{
+    width: 60px;
+    top: 20px;
+    left: 5px;
+  }
+
+  .header .logo2{
+    width: 100px;
+  }
+
+  .header nav li .st{
+    font-size: 14px;
+  }
+
+  .header nav li .en{
+    font-size: 36px;
+  }
+
+  .header nav li .tw{
+    font-size: 20px;
+  }
+
+  .header .contact-title{
+    font-size: 32px;
+  }
+
+  .header .contact-list{
+    font-size: 14px;
+    margin: 20px 0;
+  }
+
   
 
   footer {
     padding: 10px 0;
+  }
+
+  .scrolldown {
+    font-size: 14px;
   }
 
 }
@@ -865,7 +888,7 @@ nav ul li {
   .main {
     padding-right: 0px;
     padding-left: 0px;
-    margin-top: 80px;
+    margin-top: 60px;
   }
 
   .title {
@@ -874,7 +897,7 @@ nav ul li {
 
   .header {
     width: 100%;
-    height: 80px;
+    height: 60px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 20px;
   }
@@ -889,7 +912,7 @@ nav ul li {
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    padding: 0px 20px;
+    padding: 10px 20px;
   }
   .header .menu, .header .close{
     display: unset;
@@ -899,6 +922,11 @@ nav ul li {
   }
   .header:hover .menu_box{
     left: unset;
+  }
+
+  .header .logo {
+    top: 10px;
+    left: 20px;
   }
 
   .header .berger {
@@ -966,40 +994,11 @@ nav ul li {
   }
 }
 @media screen and (max-width: 720px) {
-  .header nav ul li {
-    margin-bottom: 20px;
-  }
+
   .header .logo2 {
-    top: 40px;
-    width: 60px;
+    top: calc(50% - 130px);
+    width: 80px;
   }
-  .header nav {
-    right: 60%;
-  }
-  .header .contact {
-    left: 60%;
-  }
-
-  .bggrid .gridline:nth-child(1){
-    left: 3%;
-  }
-
-  .bggrid .gridline:nth-child(3){
-    left: 97%;
-  }
-
-  footer .footer-box2 {
-    position: unset;
-    top: unset;
-    float: unset;
-    margin-top: 20px;
-  }
-
-  .scrolltop {
-    right: 10px;
-  }
-}
-@media screen and (max-width: 640px) {
   .header nav {
     left: 50%;
     right: unset;
@@ -1023,6 +1022,26 @@ nav ul li {
     transform: translate(-50%, 0);
   }
 
+  .bggrid .gridline:nth-child(1){
+    left: 3%;
+  }
+
+  .bggrid .gridline:nth-child(3){
+    left: 97%;
+  }
+
+  footer .footer-box2 {
+    position: unset;
+    top: unset;
+    float: unset;
+    margin-top: 20px;
+  }
+
+  .scrolltop {
+    right: 10px;
+  }
+}
+@media screen and (max-width: 640px) {
   footer .footer-inner {
     margin: 0 0 0 50px;
   }
@@ -1036,16 +1055,6 @@ nav ul li {
     margin-bottom: 57px;
   }
 
-  .header nav {
-    left: 50%;
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-  .header nav ul li {
-    text-align: center;
-  }
   .header .nav2 {
     right: 5%;
     display: none;
