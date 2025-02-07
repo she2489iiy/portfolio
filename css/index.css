@@ -292,50 +292,50 @@
 
 .skill{
   position: relative;
-  padding: 20px 10px 0;
+  padding-top: 30px;
 }
+
 .skill_box{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 30px;
 }
+
 .skill_work{
   border-radius: 20px;
   box-sizing: border-box;
   padding-bottom: 20%;
-  margin: 0 0 20px 20px;
-  -moz-transition: -moz-transform 0.5s;
-  -o-transition: -o-transform 0.5s;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
+  margin-bottom: 20px;
 }
 
 .skill_work:nth-child(1){
-  width: calc(60% - 80px);
+  width: calc(50% - 10px);
   background-color: #647bff;
 }
 .skill_work:nth-child(2){
-  width: 20%;
+  width: calc(25% - 15px);
   background-color: #dcdcdc;
 }
 .skill_work:nth-child(3){
-  width: 20%;
+  width: calc(25% - 15px);
   background-color: #b3bafe;
 }
 .skill_work:nth-child(4){
-  width: 20%;
+  width: calc(25% - 15px);
   background-color: #b3bafe;
 }
 .skill_work:nth-child(5){
-  width: calc(60% - 80px);
+  width: calc(25% - 15px);
   background-color: #647bff;
 }
 .skill_work:nth-child(6){
-  width: 20%;
+  width: calc(50% - 10px);
   background-color: #dcdcdc;
 }
 
 .work {
-  padding: 100px 0 80px;
+  padding: 80px 0;
 }
 .work .title {
   text-align: center;
@@ -344,13 +344,13 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 90%;
-  margin: auto;
   padding-top: 30px;
+  margin: auto;
 }
 .work-list {
   cursor: pointer;
   width: 40%;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   margin: 0 auto;
 }
 .work-list:hover .work-name .wname1:after {
@@ -394,7 +394,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding-top: 20px;
   margin: 0 10px;
 }
 
@@ -406,13 +406,13 @@
 .work-link {
   background-color: #cccccc;
   border-radius: 50%;
-  padding: 5px;
+  padding: 10px;
   margin-top: -10px;
 }
 
 .work-link img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 
 .work-name .wname1,
@@ -422,14 +422,14 @@
 
 .work-name .wname1 {
   position: relative;
-  font-size: 24px;
+  font-size: 22px;
   -moz-transition: color 0.3s;
   -o-transition: color 0.3s;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 .work-name .wname2 {
-  font-size: 18px;
+  font-size: 16px;
   color: #647bff;
 }
 .work-name .wname1:after {
@@ -462,7 +462,7 @@
   position: absolute;
   top: 25px;
   left: 25px;
-  font-size: 20px;
+  font-size: 18px;
   color: #647bff;
   background-color: #ffffff;
   border-radius: 20px;
@@ -496,7 +496,6 @@
 .work-bt {
   width: 120px;
   text-align: center;
-  margin-top: 20px;
 }
 
 .move1 {
@@ -679,7 +678,11 @@
   }
 
   .skill{
-    padding: 20px 0 0;
+    padding-top: 20px;
+  }
+
+  .skill_box{
+    margin: 0 20px;
   }
 
   .skill-pic {
@@ -690,6 +693,7 @@
   }
 
   .work-box {
+    padding-top: 0;
     max-width: 80%;
   }
 
@@ -699,15 +703,11 @@
 }
 
 @media screen and (max-width: 900px) {
-  .work {
-    padding: 50px 0 80px;
-  }
   .work-box {
-    display: unset;
+    width: 100%;
   }
   .work-list {
     width: 70%;
-    padding-top: 30px;
   }
   .work .title {
     margin-bottom: 30px;
@@ -716,16 +716,12 @@
 
 @media screen and (max-width: 720px) {
   .top-text{
-    width: 80%;
+    width: 60%;
   }
 
-  .skill_work:nth-child(1){
-    width: calc(100% - 40px);
-  }
-
-  .skill_work:nth-child(2),
-  .skill_work:nth-child(3){
-    width: calc(50% - 30px);
+  .skill_work:nth-child(1),
+  .skill_work:nth-child(6) {
+    width: 100%;
   }
 
   .work-list {
@@ -735,10 +731,29 @@
   
 }
 @media screen and (max-width: 640px) {
+  .skill_work {
+    margin-bottom: 10px;
+  }
+
+  .skill_work:nth-child(2),
+  .skill_work:nth-child(3),
+  .skill_work:nth-child(4),
+  .skill_work:nth-child(5){
+    width: calc(25% - 10px);
+  }
+
+  
 
 }
 @media screen and (max-width: 460px) {
   .top-text{
     width: 80%;
+  }
+
+  .skill_work:nth-child(2),
+  .skill_work:nth-child(3),
+  .skill_work:nth-child(4),
+  .skill_work:nth-child(5){
+    width: calc(50% - 5px);
   }
 }

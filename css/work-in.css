@@ -34,6 +34,7 @@
   left: -10px;
   width: 3px;
   height: calc(100% - 5px);
+  border-radius: 20px;
   background: #647bff; 
   background: -moz-linear-gradient(to top, #647bff, #dfd4f2);
   background: -webkit-linear-gradient(to top, #647bff, #dfd4f2); /* Chrome 10-25, Safari 5.1-6 */
@@ -41,7 +42,7 @@
 }
 .project-content {
   width: 80%;
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 80px auto 0;
 }
 .project-content img {

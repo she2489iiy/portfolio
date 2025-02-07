@@ -86,9 +86,9 @@ a {
 }
 
 .title {
-  font-size: 70px;
+  font-size: 60px;
   color: #b3bafe;
-  margin: 0px 20px 30px;
+  margin: 0px 30px 30px;
 }
 
 .bt {
@@ -891,17 +891,18 @@ nav ul li {
   }
 
   .scrolltop {
-    bottom: 10px;
-    right: 15px;
+    bottom: 5px;
+    right: 5px;
+    padding: 5px;
   }
 
   .scrolltop img{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
   }
 
   footer {
-    padding: 10px 0;
+    padding: 18px 0;
   }
 
   .scrolldown {
@@ -911,6 +912,10 @@ nav ul li {
 }
 
 @media screen and (max-width: 1100px) {
+  .title {
+    margin: 0px 20px 30px;
+  }
+
   .main {
     padding-right: 0px;
     padding-left: 0px;
