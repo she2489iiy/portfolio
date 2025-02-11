@@ -332,7 +332,7 @@ a {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 120px;
+  width: 180px;
   pointer-events: none;
   opacity: 0;
   -moz-transform: translate(-50%, -50%);
@@ -866,7 +866,7 @@ nav ul li {
   }
 
   .header .logo2{
-    width: 100px;
+    width: 120px;
   }
 
   .header nav li .st{
@@ -1024,7 +1024,7 @@ nav ul li {
 
   .header .logo2 {
     top: calc(50% - 130px);
-    width: 80px;
+    width: 100px;
   }
   .header nav {
     left: 50%;

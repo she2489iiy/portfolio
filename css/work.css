@@ -12,9 +12,12 @@
   position: relative;
   width: 50%;
 }
+.select_tw{
+  font-size: 16px;
+}
 .select-bt {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .select-bt a {
   color: #ccc;
@@ -24,27 +27,37 @@
   transition: color 0.3s;
 }
 .select-bt a:hover {
-  color: #6c7c86;
+  color: #b3bafe;
 }
 .select-bt .on {
-  color: #6c7c86;
+  color: #000000;
 }
 
 .work-content {
-  position: relative;
-  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
   margin: auto;
   padding-bottom: 100px;
 }
+
 .work-box {
-  display: flex;
+  width: 30%;
+  border-radius: 25px;
+  background-color: #b3bafe59;
+  padding: 10px;
+  margin: 0 auto 30px;
 }
+
 .work-pic {
   position: relative;
-  width: 50%;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   overflow: hidden;
 }
+
 .work-pic img {
   width: 100%;
   position: relative;
@@ -59,18 +72,15 @@
 }
 .work-case {
   position: relative;
-  width: 45%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  height: 100px;
   border-radius: 20px;
-  background: rgba(165, 145, 128, 0);
+  background: #ffffff;
   -moz-transition: background 0.5s;
   -o-transition: background 0.5s;
   -webkit-transition: background 0.5s;
   transition: background 0.5s;
-  margin: 2% auto;
+  padding: 20px;
+  margin-top: -30px;
 }
 .work-number {
   color: #999;
@@ -81,7 +91,7 @@
 }
 .work-name {
   font-size: 18px;
-  margin: 10px;
+  margin-bottom: 10px;
   overflow: hidden;
 }
 .work-name span {
@@ -99,12 +109,6 @@
   display: inline-block;
   font-style: italic;
   text-decoration: underline;
-}
-.work a:hover .work-more {
-  color: #000;
-}
-.work a:hover .work-case {
-  background: rgba(165, 145, 128, 0.2);
 }
 .work a:hover .work-pic img {
   -moz-transform: scale(1, 1);
@@ -256,13 +260,19 @@
   transform: translateY(0px);
 }
 
+@media screen and (max-width: 1400px) {
+  .work-box {
+    width: 40%;
+  }
+}
+
 @media screen and (max-width: 1100px) {
   .select-in {
     margin: 0 10%;
   }
 
-  .work-content {
-    width: 80%;
+  .work-box{
+    width: 45%;
   }
 }
 @media screen and (max-width: 720px) {
@@ -283,45 +293,50 @@
     width: 100%;
   }
   .work-case {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
     padding: 20px 0;
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.5);
-    border: none;
     margin: auto;
   }
-  .work-number, .work-name, .work-more {
-    color: #fff;
-  }
-  .work a:hover .work-number {
-    color: #000;
-  }
-  .work a:hover .work-name {
-    color: #666;
-  }
-  .work a:hover .work-case {
-    background: rgba(255, 255, 255, 0.8);
-  }
+
 
   .work a:nth-child(even) .work-box {
     flex-direction: column-reverse;
   }
 }
+
+
+@media screen and (max-width: 640px) {
+  .select-in {
+    margin: 0 20px;
+  }
+  
+
+  
+}
+
 @media screen and (max-width: 460px) {
   .select-in {
     display: block;
+    margin: 0 20px;
   }
 
-  .select-title,
   .select-box {
-    width: 100%;
+    padding-left: 20px;
   }
+
+  .select-in {
+    margin: 0 20px;
+  }
+
+  .work-content {
+    width: unset;
+    margin: 0 20px;
+  }
+  
 
   .work-name {
     font-size: 16px;
