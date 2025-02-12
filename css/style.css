@@ -528,13 +528,29 @@ footer .footer-in {
 }
 
 .scrolldown {
+  width: 100px;
   position: absolute;
-  bottom: 15px;
+  /*bottom: 15px;*/
+  bottom: 30px;
   right: 50px;
   color: #ccc;
   cursor: pointer;
   font-size: 18px;
+  z-index: 5;
 }
+
+.scrolldown img {
+  position: absolute;
+  width: 100%;
+}
+
+.scrolldown .topcircle {
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
 .scrolldown:before {
   content: "";
   width: 20px;
