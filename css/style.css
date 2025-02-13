@@ -110,6 +110,7 @@ a {
   width: 100%;
   background-color: #f1f1f1;
   border-radius: 10px;
+  overflow: hidden;
 }
 .bt span:after {
   content: "";
@@ -135,12 +136,12 @@ a {
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 .bt:hover span {
   color: #b3bafe;
 }
 .bt:hover span:after {
-  border-radius: 10px;
   -moz-transform: scaleX(1);
   -ms-transform: scaleX(1);
   -webkit-transform: scaleX(1);
@@ -515,10 +516,12 @@ footer .footer-in {
   background: #000000;
   padding: 10px;
 }
+
 .scrolltop img {
   width: 30px;
   height: 30px;
 }
+
 .scrolltop:hover {
   background: #000000;
   background: #647bff; 
@@ -528,11 +531,11 @@ footer .footer-in {
 }
 
 .scrolldown {
-  width: 100px;
+  width: 150px;
   position: absolute;
   /*bottom: 15px;*/
-  bottom: 30px;
-  right: 50px;
+  bottom: -100px;
+  right: 0px;
   color: #ccc;
   cursor: pointer;
   font-size: 18px;
@@ -540,18 +543,66 @@ footer .footer-in {
 }
 
 .scrolldown img {
-  position: absolute;
   width: 100%;
 }
 
+
+
 .scrolldown .topcircle {
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+  position: absolute;
+  top: 0;
+  animation: Around 10s infinite linear;
 }
 
-.scrolldown:before {
+@keyframes Around { 
+
+  0% { 
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+   }
+
+  100% { 
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+   }
+
+ }
+
+.scrolldown .topcircle2 {
+  -moz-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.scrolldown .topcircle3 {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  -moz-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.scrolldown:hover {
+  color: #000;
+}
+
+.scrolldown:hover .topcircle2 {
+  opacity: 0;
+}
+
+.scrolldown:hover .topcircle3 {
+  opacity: 1;
+}
+
+
+
+/*.scrolldown:before {
   content: "";
   width: 20px;
   height: 1px;
@@ -568,16 +619,13 @@ footer .footer-in {
   -webkit-transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.scrolldown:hover {
-  color: #000;
-}
 .scrolldown:hover:before {
   -moz-transform: translateX(135px);
   -ms-transform: translateX(135px);
   -webkit-transform: translateX(135px);
   transform: translateX(135px);
   background: #000;
-}
+}*/
 
 .change {
   position: fixed;
@@ -828,7 +876,8 @@ nav ul li {
   }
 
   .scrolldown {
-    right: 45px;
+    width: 100px;
+    bottom: -60px;
   }
 
   .scrolldown:hover:before {
@@ -1042,6 +1091,7 @@ nav ul li {
     top: calc(50% - 130px);
     width: 100px;
   }
+
   .header nav {
     left: 50%;
     right: unset;
@@ -1050,9 +1100,11 @@ nav ul li {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+
   .header nav li {
     margin: 20px 0;
   }
+
   .header .contact {
     text-align: center;
     left: 50%;
@@ -1084,7 +1136,14 @@ nav ul li {
     right: 10px;
   }
 }
+
 @media screen and (max-width: 640px) {
+  .scrolldown {
+    width: 80px;
+    left: unset;
+    bottom: -30px;
+  }
+
   footer .footer-inner {
     margin: 0 0 0 50px;
   }

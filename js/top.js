@@ -46,7 +46,7 @@ $(function(){
 
 	//down
 	$(".scrolldown").click(function(){
-		var contT = $(".top").height() - 80;
+		var contT = $(".top").height() - 0;
 		$("body,html").animate({scrollTop: contT},1000);
 	});
 	

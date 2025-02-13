@@ -292,7 +292,7 @@
 
 .skill{
   position: relative;
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .skill_box{
@@ -305,17 +305,24 @@
 .skill_work{
   border-radius: 20px;
   box-sizing: border-box;
-  padding-bottom: 20%;
+  height: 20vw;
+  padding: 40px;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+  /*padding-bottom: 20%;*/
   margin-bottom: 20px;
 }
 
 .skill_work:nth-child(1){
+  position: relative;
+  color: #ffffff;
   width: calc(50% - 10px);
-  background-color: #647bff;
+  background-color: #000000;
 }
 .skill_work:nth-child(2){
   width: calc(25% - 15px);
-  background-color: #dcdcdc;
+  background-color: #647bff;
 }
 .skill_work:nth-child(3){
   width: calc(25% - 15px);
@@ -323,15 +330,34 @@
 }
 .skill_work:nth-child(4){
   width: calc(25% - 15px);
-  background-color: #b3bafe;
+  background-color: #647bff;
 }
 .skill_work:nth-child(5){
   width: calc(25% - 15px);
-  background-color: #647bff;
+  background-color: #b3bafe;
 }
 .skill_work:nth-child(6){
   width: calc(50% - 10px);
   background-color: #dcdcdc;
+}
+
+.skill-name {
+  font-size: 3.5vw;
+  font-weight: bold;
+  color: #b3bafe;
+}
+
+.skill-names {
+  font-size: 28px;
+}
+
+.skill-detail {
+  font-size: 24px;
+  line-height: 1.5em;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  margin: 0 40px;
 }
 
 .work {
@@ -626,6 +652,25 @@
     width: 50px;
   }
 
+  .skill {
+    padding-top: 30px;
+  }
+
+  .skill_work {
+    padding: 20px;
+  }
+
+  .skill-names {
+    font-size: 18px;
+  }
+
+  .skill-detail {
+    font-size: 14px;
+    bottom: 20px;
+    left: 0;
+    margin: 0 20px;
+  }
+
   .work-name{
     line-height: 1.5em;
   }
@@ -647,7 +692,7 @@
   }
 
   .work-in {
-    font-size: 16px;
+    font-size: 14px;
     top: 15px;
     left: 15px;
   }
@@ -685,6 +730,10 @@
     margin: 0 20px;
   }
 
+  .skill-names {
+    font-size: 16px;
+  }
+
   .skill-pic {
     width: 90%;
   }
@@ -695,10 +744,6 @@
   .work-box {
     padding-top: 0;
     max-width: 80%;
-  }
-
-  .work-in{
-    font-size: 14px;
   }
 }
 
@@ -717,9 +762,23 @@
     width: 60%;
   }
 
+  .skill-name {
+    font-size: 26px;
+  }
+
+  .skill-names {
+    font-size: 16px;
+  }
+
   .skill_work:nth-child(1),
   .skill_work:nth-child(6) {
     width: 100%;
+    height: unset;
+  }
+
+  .skill-detail{
+    position: unset;
+    margin: 20px 0 0;
   }
 
   .work-list {
@@ -757,6 +816,7 @@
   .skill_work:nth-child(4),
   .skill_work:nth-child(5){
     width: calc(50% - 5px);
+    height: 40vw;
   }
 
   .work-box {
