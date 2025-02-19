@@ -32,7 +32,30 @@ $(function(){
 		})
 	}
 
+	//打字機
+	const text = "Hello ! 歡迎來到我的個人網站 !";  // 要顯示的文字
+    let t = 0;  // 文字索引
+    const speed = 150;  // 每個字母顯示的速度，單位為毫秒
+
+	function typeWriter() {
+	    if (t < text.length) {
+	        $('#typing').append(text.charAt(t));  // 使用 jQuery 的 append() 方法
+	        t++;
+	        setTimeout(typeWriter, speed);  // 使用 setTimeout 來控制速度
+	    }
+	}
+	typeWriter();
+
+	
+
+    
+
 })
+
+
+	
+
+
 
 
 //move
@@ -126,6 +149,7 @@ function setScroll(){
 
 $(window).load(function(){
 	setScroll();
+	
 })
 
 $(window).scroll(function(){

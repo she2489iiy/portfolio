@@ -48,31 +48,17 @@
 }
 
 .about{
+  font-size: 24px;
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 300px;
-  height: 180px;
   border-radius: 20px;
   box-sizing: border-box;
-  padding: 20px;
-  z-index: 2;
-}
-.about:after{
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
   background-color: rgba(256, 256, 256, 0.7);
   border-radius: 20px;
-  filter: blur(0.5px);
-  z-index: 0;
-}
-.about-text{
-  position: relative;
-  z-index: 2;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  z-index: 5;
 }
 
 .top-text {
@@ -346,7 +332,8 @@
 }
 .skill_work:nth-child(6){
   width: calc(50% - 10px);
-  background-color: #dcdcdc;
+  background-color: #eaeaea;
+  background-position: bottom;
 }
 
 .skill-name {
@@ -371,6 +358,45 @@
 .skill_in {
   font-size: 24px;
   color: #ffffff;
+}
+
+.skill_list {
+  display: flex;
+  align-items: center;
+
+}
+
+.skill_l,
+.skill_r {
+  width: 50%;
+}
+
+.skill_title {
+  position: relative;
+  color: #647bff;
+  font-size: 28px;
+  font-weight: bold;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.skill_title:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 3px;
+  height: 28px;
+  background: #647bff; 
+  background: -moz-linear-gradient(to bottom, #647bff, #dfd4f2);
+  background: -webkit-linear-gradient(to bottom, #647bff, #dfd4f2); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #647bff, #dfd4f2);
+  border-radius: 10px;
+}
+
+.skill_list p {
+  font-size: 20px;
+  margin: 10px 0;
 }
 
 
@@ -645,6 +671,12 @@
 
 
 @media screen and (max-width: 1400px) {
+  .about{
+    font-size: 16px;
+    top: 10px;
+    left: 10px;
+  }
+
   .tt01{
     display: none;
   }
@@ -705,6 +737,20 @@
     font-size: 18px;
   }
 
+  .skill_title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .skill_list p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .skill_title:after { 
+    height: 20px;
+  }
+
   .skill-marquee {
     height: 50px;
     background-size: 1400px;
@@ -762,6 +808,10 @@
     display: none;
   }
 
+  .about {
+    font-size: 14px;
+  }
+
   .about-head {
     margin: 0 10% 30px;
   }
@@ -789,6 +839,19 @@
   .skill_in {
     font-size: 14px;
     color: #ffffff;
+  }
+
+  .skill_title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .skill_title:after { 
+    height: 18px;
+  }
+
+  .skill_list p {
+    margin: 3px 0;
   }
 
   .work-box {
