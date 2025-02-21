@@ -24,6 +24,7 @@
 }
 .project-describe {
   text-align: left;
+  line-height: 1.5em;
   margin-top: 30px;
   position: relative;
 }
@@ -40,6 +41,17 @@
   background: -webkit-linear-gradient(to top, #647bff, #dfd4f2); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #647bff, #dfd4f2);
 }
+
+.project-describe p {
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.project-describe h3 {
+  color: #333333;
+  margin-bottom: 10px;
+}
+
 .project-content {
   width: 80%;
   max-width: 1400px;

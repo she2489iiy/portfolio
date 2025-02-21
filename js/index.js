@@ -66,7 +66,7 @@ function setScroll(){
 	var scroll = $(window).scrollTop();
 
 
-	var move = $(".move1 ,.move2 ,.move3 ,.move4");
+	var move = $(".move1 ,.move2 ,.move3 ,.move4 , .move5");
 
 	move.each(function(){
 		var tCont = $(this).offset().top;
