@@ -99,9 +99,11 @@
 
 .project-content .project-describe {
   margin-left: 10px;
+  margin-bottom: 20px;
 }
 
-.project-content img {
+.project-content img,
+.project-content video {
   width: 100%;
   margin-bottom: 20px;
 }
