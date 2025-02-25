@@ -64,8 +64,6 @@
 
 .work-pic {
   position: relative;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
   overflow: hidden;
 }
 
@@ -147,8 +145,6 @@
 .work-name span {
   display: inline-block;
 }
-
-
 
 .work-discribe {
   color: #999;

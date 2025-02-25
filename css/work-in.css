@@ -105,6 +105,7 @@
 .project-content img,
 .project-content video {
   width: 100%;
+  border-radius: 20px;
   margin-bottom: 20px;
 }
 .project-video {
@@ -124,6 +125,10 @@
 .project-bt {
   width: 42px;
   margin: 80px auto;
+}
+
+.border {
+  border: 1px solid #cccccc;
 }
 
 .move1 {
