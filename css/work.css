@@ -70,10 +70,10 @@
 .work-pic img {
   width: 100%;
   position: relative;
-  -moz-transform: scale(1.1, 1.1);
-  -ms-transform: scale(1.1, 1.1);
-  -webkit-transform: scale(1.1, 1.1);
-  transform: scale(1.1, 1.1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
   -moz-transition: -moz-transform 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
   -o-transition: -o-transform 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
@@ -147,7 +147,7 @@
 }
 
 .work-discribe {
-  color: #999;
+  color: #999;  
   font-size: 13px;
   overflow: hidden;
   -moz-transition: all 0.3s;
@@ -157,10 +157,10 @@
 }
 
 .work a:hover .work-pic img {
-  -moz-transform: scale(1, 1);
-  -ms-transform: scale(1, 1);
-  -webkit-transform: scale(1, 1);
-  transform: scale(1, 1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
 }
 
 .select-title {

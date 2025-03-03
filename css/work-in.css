@@ -93,7 +93,7 @@
 
 .project-content {
   width: 80%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 80px auto 0;
 }
 
@@ -150,14 +150,12 @@
   transform: translate(0px, 0px);
 }
 
-@media screen and (max-width: 1400px) {
+
+@media screen and (max-width: 1100px) {
   .project-content {
     width: 90%;
   }
-}
 
-
-@media screen and (max-width: 1100px) {
   .project-in {
     width: 80%;
   }
