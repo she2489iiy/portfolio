@@ -28,13 +28,13 @@
   transition: transform 0s cubic-bezier(0.25, 0.25, 0.75, 0.75);
 }
 .bg-pic:nth-child(1) {
-  background-position: 49%;
+  background-position: 40%;
 }
 .bg-pic:nth-child(2) {
-  background-position: 18%;
+  background-position: 30%;
 }
 .bg-pic:nth-child(3) {
-  background-position: 52%;
+  background-position: 50%;
 }
 .bg-pic.move-img {
   -moz-transform: scale(1.1) perspective(500px) translateZ(-50px);
