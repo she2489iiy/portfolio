@@ -64,6 +64,14 @@ $(window).load(function(){
 
 })
 
+$(document).ready(function() {
+            // 當 <a> 被點擊時
+    $('#backLink').click(function(e) {
+        e.preventDefault(); // 防止 <a> 預設行為
+        window.history.back(); // 回到上一頁
+    });
+});
+
 
 
 
