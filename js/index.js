@@ -32,21 +32,50 @@ $(function(){
 		})
 	}
 
-	//打字機
-	const text = "喜愛觀察生活的細節，探索不同領域的事物";  // 要顯示的文字
-    let t = 0;  // 文字索引
-    const speed = 150;  // 每個字母顯示的速度，單位為毫秒
+	//打字機1
+//	const text = "喜愛觀察生活的細節，探索不同領域的事物";  // 要顯示的文字
+//    let t = 0;  // 文字索引
+//    const speed = 150;  // 每個字母顯示的速度，單位為毫秒
 
-	function typeWriter() {
-	    if (t < text.length) {
-	        $('#typing').append(text.charAt(t));  // 使用 jQuery 的 append() 方法
-	        t++;
-	        setTimeout(typeWriter, speed);  // 使用 setTimeout 來控制速度
-	    }
-	}
-	typeWriter();
+//	function typeWriter() {
+//	    if (t < text.length) {
+//	        $('#typing').append(text.charAt(t));  // 使用 jQuery 的 append() 方法
+//	        t++;
+//	        setTimeout(typeWriter, speed);  // 使用 setTimeout 來控制速度
+//	    }
+//	}
+//	typeWriter();
 
-	
+	//打字機2
+	var sentence1 = "Hi! I'm PEI-HSUAN LIN.";
+    var sentence2 = "喜愛觀察生活的細節，探索不同領域的事物!";
+      
+    var index1 = 0;
+    var index2 = 0;
+
+    function typeSentence1() {
+        if (index1 < sentence1.length) {
+          $('#typingEffect1').append(sentence1.charAt(index1));
+          index1++;
+          setTimeout(typeSentence1, 100);
+        } else {
+          // 第一段話打完後，顯示第二段話
+          setTimeout(typeSentence2, 500);
+        }
+    }
+
+    function typeSentence2() {
+        $('#typingEffect2').css('opacity', 1); // 顯示第二句
+
+        if (index2 < sentence2.length) {
+          $('#typingEffect2').append(sentence2.charAt(index2));
+          index2++;
+          setTimeout(typeSentence2, 100);
+        }
+    }
+
+    // 開始打字
+    typeSentence1();
 
     
 
