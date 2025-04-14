@@ -2,8 +2,8 @@
   position: relative;
 }
 .project-name {
-  color: #666;
-  font-size: 20px;
+  color: #000000;
+  font-size: 30px;
   font-weight: 600;
   text-align: center;
   padding-top: 80px;
@@ -21,17 +21,54 @@
   font-weight: 600;
   margin-right: 8px;
 }
+.project_box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.project_box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project_box ul li {
+  margin: 5px;
+}
+
+.pb {
+  font-weight: bold;
+}
+
+.project_problem,
+.project_solution {
+  width: calc(50% - 10px);
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.project_problem{
+  background-color: #ededed;
+  margin-right: 20px;
+}
+
+.project_solution{
+  background-color: #dfe2ff;
+}
+
 .project-describe {
   text-align: left;
   line-height: 1.5em;
   margin-left: 10px;
-  margin-top: 50px;
+  margin-top: 60px;
   position: relative;
 }
 .project-describe:before {
   content: "";
   position: absolute;
-  top: 3px;
+  /*top: 3px;*/
   left: -10px;
   width: 3px;
   height: calc(100% - 5px);
@@ -48,6 +85,7 @@
 }
 
 .project-describe h3 {
+  font-size: 24px;
   color: #333333;
   margin-bottom: 10px;
 }
@@ -150,6 +188,18 @@
   transform: translate(0px, 0px);
 }
 
+@media screen and (max-width: 1200px) {
+  .project-name {
+    font-size: 24px;
+  }
+
+  .project-describe h3,
+  .project_box h3 {
+    font-size: 20px;
+  }
+}
+
+
 
 @media screen and (max-width: 1100px) {
   .project-content {
@@ -159,17 +209,40 @@
   .project-in {
     width: 80%;
   }
+
+  .project-describe h3,
+  .project_box h3 {
+    font-size: 17px;
+  }
 }
 
 @media screen and (max-width: 720px) {
   .project-name {
-    font-size: 18px;
-    padding-top: 50px;
+    font-size: 20px;
+    padding-top: 60px;
+    width: 80%;
+    text-align: left;
+    margin: auto;
   }
 
   .project-content {
+    margin-top: 40px;
+  }
+
+  .project_problem,
+  .project_solution {
+    width: 100%;
+  }
+
+  .project_problem {
+    margin-right: unset;
+    margin-bottom: 20px;
+  }
+
+  .project-describe {
     margin-top: 50px;
   }
+
 }
 
 @media screen and (max-width: 640px) {
