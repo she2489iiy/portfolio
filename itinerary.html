@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<title>我的旅程 — 東京行程規劃</title>
+<meta name="description" content="東京六日遊行程規劃 — 機場、交通、飯店一覽" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{
+  --bg:#f3f5f8;
+  --fg:oklch(0.25 0.04 20);
+  --card:#fff;
+  --primary:oklch(0.68 0.18 5);
+  --primary-fg:#fff;
+  --primary-soft:oklch(0.96 0.03 10);
+  --muted-fg:oklch(0.55 0.03 20);
+  --accent:oklch(0.93 0.05 10);
+  --info:oklch(0.6 0.15 240);
+  --info-soft:oklch(0.95 0.04 240);
+  --success:oklch(0.55 0.15 145);
+  --success-soft:oklch(0.95 0.04 145);
+  --gray:oklch(62.675% 0.00007 271.152);
+  --gray-soft:oklch(96.416% 0.00011 271.152);
+  --border:oklch(0.93 0.02 20);
+  --amber:#f59e0b;
+}
+*{box-sizing:border-box;border:0 solid var(--border);margin:0;padding:0;}
+html,body{font-family:"Noto Sans TC",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;line-height:1.4;}
+button{font:inherit;color:inherit;background:none;cursor:pointer;border:0;}
+ul{list-style:none;}
+i[data-lucide]{width:1.25rem;height:1.25rem;display:inline-block;vertical-align:middle;}
+
+.app{max-width:28rem;margin:0 auto;min-height:100vh;background:var(--bg);padding-bottom:1rem;position:relative;}
+
+/* header */
+.hd{display:flex;align-items:center;justify-content:center;padding:16px 10px;}
+.hd h1{font-size:1.125rem;font-weight:700;letter-spacing:.04em;}
+.iconBtn{width:2.5rem;height:2.5rem;border-radius:9999px;display:flex;align-items:center;justify-content:center;background:var(--card);color:var(--primary);box-shadow:0 1px 2px rgba(0,0,0,.05);border:1px solid color-mix(in oklab,var(--border) 60%,transparent);}
+.iconBtn.primary{background:var(--primary);color:var(--primary-fg);box-shadow:0 4px 6px -1px rgba(0,0,0,.1);border:0;}
+.iconBtn i{width:1.125rem;height:1.125rem;}
+.iconBtn.primary i{width:1rem;height:1rem;}
+
+/* hero card */
+.hero{margin:0 12px;border-radius:.8rem;background:var(--card);box-shadow:0 2px 3px rgba(0,0,0,.08);border:1px solid color-mix(in oklab,var(--border) 60%,transparent);overflow:hidden;}
+.heroRow{display:flex;align-items:center;justify-content:space-between;padding:12px;position:relative;gap:.5rem;}
+.dayLbl{font-size:1.75rem;font-weight:800;color:var(--primary);letter-spacing:-.02em;line-height:1;}
+.dayWk{font-size:.875rem;color:var(--muted-fg);font-weight:500;margin-left:.25rem;}
+.heroMid{position:absolute;left:50%;transform:translateX(-40%);font-size:1.5rem;display:flex;align-items:center;gap:.5rem;}
+.heroMid .rt{display:flex;align-items:center;gap:.375rem;font-size:1rem;font-weight:700;}
+.heroMid .chip{border-radius:9999px;background:var(--primary-soft);color:var(--primary);font-size:11px;font-weight:600;padding:2px 10px;border:1px solid color-mix(in oklab,var(--primary) 20%,transparent);}
+.heroMid .emoji{font-size:1.125rem;margin-top:-2px;}
+.overviewBtn{display:flex;align-items:center;gap:.5rem;border-radius:9999px;background:var(--primary-soft);padding:.5rem 1rem;font-size:.875rem;font-weight:600;color:var(--primary);border:1px solid color-mix(in oklab,var(--primary) 20%,transparent);flex-shrink:0;}
+.overviewBtn i{width:1rem;height:1rem;}
+.overviewBtn .caret{width:.75rem;height:.75rem;transform:rotate(-90deg);}
+
+/* tabs */
+.tabs{display:flex;align-items:center;gap:.75rem;padding-top:12px;margin:0px 12px;overflow-x:auto;border-top:1px solid color-mix(in oklab,var(--border) 50%,transparent);scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tabs .overview{display:flex;align-items:center;gap:.375rem;font-size:.875rem;color:var(--muted-fg);flex-shrink:0;padding:0 .25rem;}
+.tabs .overview i{width:1rem;height:1rem;}
+.tabBtn{flex-shrink:0;padding:0 .5rem 4px;font-size:.875rem;font-weight:500;color:var(--muted-fg);border-bottom:3px solid transparent;}
+.tabBtn.active{color:var(--primary);border-color:var(--primary);}
+.tabBtn .wk{font-size:.75rem;}
+.tabs .endCaret{width:1rem;height:1rem;color:var(--muted-fg);flex-shrink:0;margin-left:auto;}
+
+/* timeline */
+.tl{margin:16px 12px 0;position:relative;}
+.tl::before{content:"";position:absolute;left:7px;top:5px;bottom:0px;width:2px;background:#d8cece;}
+.tli{position:relative;padding-left:1.75rem;padding-bottom:1rem;}
+.tli.last{padding-bottom:0;}
+.tli .node{position:absolute;left:0;top:1.2rem;width:1rem;height:1rem;border-radius:9999px;background:var(--card);border:2px solid var(--primary);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.05);}
+.tli.info .node{border-color:var(--success);}
+.tli .node>span{width:.5rem;height:.5rem;border-radius:9999px;background:var(--primary);display:block;}
+.tli.info .node>span{background:var(--success);}
+
+/* card */
+.card{border-radius:.8rem;background:var(--card);padding:12px;box-shadow:0 2px 3px rgba(0,0,0,.08);border:1px solid color-mix(in oklab,var(--border) 60%,transparent);position:relative;}
+.cardRow{display:flex;align-items:flex-start;}
+.body{flex:1;min-width:0;}
+.body.pr{padding-right:3rem;}
+
+.circ{width:2.25rem;height:2.25rem;font-size:20px;border-radius:9999px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-right:12px;}
+.circ.pink{background:var(--primary-soft);color:var(--primary);}
+.circ.info{background:var(--info-soft);color:var(--info);}
+.circ.green{background:var(--success-soft);color:var(--success);}
+.circ.face{background:color-mix(in oklab,var(--accent) 60%,transparent);font-size:20px;}
+.circ i{}
+
+.tBadge{display:inline-block;border-radius:.375rem;padding:2px 8px;font-size:.75rem;font-weight:600;}
+.tBadge.pink{background:var(--primary-soft);color:var(--primary);}
+.tBadge.blue{background:var(--info-soft);color:var(--info);}
+.tBadge.green{background:var(--success-soft);color:var(--success);}
+
+.h3{font-size:0.9rem;font-weight:700;margin-top:.5rem;line-height:1.4;}
+.h3.pri{color:var(--primary);}
+.h3.noTop{margin-top:0;}
+.arrow{color:var(--primary);}
+.sub{font-size:.875rem;color:var(--muted-fg);font-weight:400;}
+.muted-s{font-size:.75rem;color:var(--muted-fg);}
+.pri-note{margin-top:.75rem;font-size:.875rem;color:var(--primary);font-weight:500;}
+
+.list{margin-top:6px;;display:flex;flex-direction:column;gap:.375rem;font-size:.875rem;color:color-mix(in oklab,var(--fg) 80%,transparent);}
+.list.lg{gap:.5rem;}
+.list li{display:flex;align-items:flex-start;gap:5px;}
+.list.center li{align-items:center;}
+.dot{width:4px;height:4px;border-radius:9999px;background:color-mix(in oklab,var(--fg) 40%,transparent);flex-shrink:0;margin-top:.5rem;}
+.list.center .dot{margin-top:0;}
+.tip {color:var(--amber);}
+.pp {color:#139aa3;}
+.tip i,.pp i{margin-right: 3px;}
+
+.pill{position:absolute;top:.75rem;right:.75rem;border-radius:.75rem;padding:4px 8px;font-size:11px;font-weight:600;line-height:1.15;text-align:center;}
+.pill.pink{background:var(--primary-soft);color:var(--primary);border:1px solid color-mix(in oklab,var(--primary) 20%,transparent);}
+.pill.green{background:var(--success-soft);color:var(--success);border:1px solid color-mix(in oklab,var(--success) 20%,transparent);}
+.pill.gray{background:#f4fcf3;color:var(--success);border:1px solid #e6e6e6;}
+
+
+.inlineBox{margin-top:.75rem;display:flex;align-items:center;justify-content:space-between;border-radius:.5rem;padding:8px;}
+.inlineBox.info{background:color-mix(in oklab,var(--gray-soft) 60%,transparent);border:1px solid color-mix(in oklab,var(--gray) 15%,transparent);}
+.inlineBox .l{display:flex;align-items:center;gap:.2rem;color:color-mix(in oklab,var(--fg) 80%,transparent);min-width:0;}
+.inlineBox .l span{font-size:.8rem;}
+.inlineBox .l i{color:var(--gray);margin-top:2px;}
+.inlineBox .list {margin: 0;}
+
+.linkBtn{display:inline-flex;align-items:center;gap:4px;font-size:.75rem;font-weight:600;color:var(--success);padding:2px 6px;border-radius:.375rem;border:1px solid color-mix(in oklab,var(--info) 30%,transparent);background:var(--card);flex-shrink:0;margin-left:.5rem;text-decoration:none;}
+.linkBtn i{width:8px;height:8px;}
+.linkBtn.pri{color:var(--primary);border-color:color-mix(in oklab,var(--primary) 30%,transparent);padding:2px 6px;}
+
+.softBox{margin-top:.75rem;display:flex;align-items:flex-start;gap:.2rem;border-radius:.5rem;padding:8px;background:color-mix(in oklab,var(--primary-soft) 60%,transparent);border:1px solid color-mix(in oklab,var(--primary) 15%,transparent);}
+.softBox i{width:14px;height:14px;color:var(--primary);flex-shrink:0;margin-top:2px;}
+.softBox span{font-size:.8rem;color:color-mix(in oklab,var(--fg) 80%,transparent);line-height:1.5;}
+
+/* hotel */
+.hotel{margin:1rem 1rem 0;border-radius:1rem;background:var(--card);border:1px solid color-mix(in oklab,var(--border) 60%,transparent);box-shadow:0 1px 2px rgba(0,0,0,.05);padding:1rem;}
+.hotel .row{display:flex;align-items:flex-start;gap:.75rem;}
+.hBadge{width:3rem;height:3rem;border-radius:1rem;background:var(--info-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.hBadge i{color:var(--info);}
+.hTitle{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+.hTitle h3{font-size:1rem;font-weight:700; color:var(--info)}
+.stars{display:flex;color:var(--amber);}
+.stars i{width:14px;height:14px;margin-right: 4px;}
+.hInfo{margin-top:.5rem;display:flex;flex-direction:column;gap:.375rem;font-size:.75rem;color:color-mix(in oklab,var(--fg) 80%,transparent);}
+.hInfo .r{display:flex;align-items:flex-start;gap:.2rem;}
+.hInfo .r > i{color:var(--primary);flex-shrink:0;margin-top:4px;}
+.hInfo .r > i.amber{color:var(--amber);}
+.hInfo .r span{flex:1;}
+.green-t{color:var(--success);font-weight:500;}
+
+.empty{margin:2.5rem 1rem 0;text-align:center;font-size:.875rem;color:var(--muted-fg);}
+
+/* bottom nav */
+.nav{position:fixed;bottom:0;left:0;right:0;max-width:28rem;margin:0 auto;background:color-mix(in oklab,var(--card) 95%,transparent);backdrop-filter:blur(8px);border-top:1px solid color-mix(in oklab,var(--border) 60%,transparent);padding:.5rem;}
+.nav .row{display:flex;align-items:center;justify-content:space-around;}
+.tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 12px;color:var(--muted-fg);position:relative;}
+.tab i{width:1.25rem;height:1.25rem;}
+.tab span{font-size:11px;}
+.tab .badge{position:absolute;top:-4px;right:-8px;width:1rem;height:1rem;border-radius:9999px;background:var(--primary);color:var(--primary-fg);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.tab .iconWrap{position:relative;}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="hd">
+    <!-- <button class="iconBtn"><i data-lucide="chevron-left"></i></button> -->
+    <h1>我的旅程</h1>
+    <!-- <button class="iconBtn primary"><i data-lucide="pencil"></i></button> -->
+  </header>
+
+  <section class="hero">
+    <div class="heroRow">
+      <div style="display:flex;align-items:baseline;flex-shrink:0;">
+        <span id="dayLabel" class="dayLbl">6/13</span>
+        <span id="dayWeek" class="dayWk">(六)</span>
+      </div>
+      <div id="heroMid" class="heroMid"><span style="font-size:1.5rem">☁️✈️☁️</span></div>
+      <!-- <button class="overviewBtn">
+        <i data-lucide="briefcase"></i>行程總覽
+        <i data-lucide="chevron-down" class="caret"></i>
+      </button> -->
+    </div>
+    <div class="tabs">
+      <!-- <button class="overview"><i data-lucide="list"></i>總覽</button> -->
+      <div id="tabs" style="display:flex;gap:.5rem;"></div>
+      <!-- <i data-lucide="chevron-down" class="endCaret"></i> -->
+    </div>
+  </section>
+
+  <main id="content"></main>
+
+  <!-- bottom nav -->
+  <!-- <nav class="nav">
+    <div class="row">
+      <button class="tab"><i data-lucide="lock"></i><span>秘密</span></button>
+      <button class="tab"><div class="iconWrap"><i data-lucide="message-circle"></i><span class="badge">0</span></div><span>留言</span></button>
+      <button class="tab"><i data-lucide="copy"></i><span>複製</span></button>
+      <button class="tab"><i data-lucide="share-2"></i><span>分享</span></button>
+    </div>
+  </nav> -->
+</div>
+
+<script>
+const days = [
+  {label:"6/13", week:"六", render: day13},
+  {label:"6/14", week:"日", render: day14},
+  {label:"6/15", week:"一", render: day15},
+  {label:"6/16", week:"二", render: day16},
+  {label:"6/17", week:"三", render: day17},
+  {label:"6/18", week:"四", render: day18},
+  {label:"6/19", week:"五", render: day19},
+  {label:"6/20", week:"六", render: day20},
+];
+let active="6/13";
+
+const ic=(n,extra="")=>`<i data-lucide="${n}"${extra?` style="${extra}"`:""}></i>`;
+const tBadge=(t,tone)=>`<span class="tBadge ${tone}">${t}</span>`;
+const circ=(name,tone)=>`<div class="circ ${tone}">${ic(name)}</div>`;
+const face=(e)=>`<div class="circ face">${e}</div>`;
+const tli=(dot,html,opts={})=>{
+  const cls=[(dot==="info"?"info":""),(opts.last?"last":"")].filter(Boolean).join(" ");
+  return `<div class="tli ${cls}"><div class="node"><span></span></div>${html}</div>`;
+};
+
+function day13(){
+  return `
+<div class="tl">
+  ${tli("primary",`
+    <div class="card">
+      <div class="cardRow">
+        <div class="circ pink">
+          <i class="fa-regular fa-face-smile-wink"></i>
+        </div>
+        <div class="body">
+          ${tBadge("10:40","pink")}
+          <h3 class="h3">機場集合出發!</h3>
+          <!--<p class="sub" style="margin-top:.25rem">集合出發！</p>-->
+          <ul class="list center">
+            <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>飛機皮</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("info",`
+    <div class="card">
+      <span class="pill gray">航程 3hr 5min</span>
+      <div class="cardRow">
+        <div class="circ green">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div class="body">
+          ${tBadge("13:00 - 17:15","green")}
+          <h3 class="h3">國泰cx450：桃園機場 1T <span class="arrow">→</span> 成田機場 2T</h3>
+          <div class="inlineBox info">
+            <div class="l"><i class="fa-solid fa-location-dot"></i><span>成田機場御朱印 (2航廈主樓到達區1層)</span></div>
+            <a class="linkBtn" href="https://jalplaza-airport.jalux.com/shop/nrt/" target="_blank">MAP<a>
+          </div>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("info",`
+    <div class="card">
+      <span class="pill gray">車程 1hr</span>
+      <div class="cardRow">
+        <div class="circ green">
+          <i class="fa-solid fa-train"></i>
+        </div>
+        <div class="body pr">
+          ${tBadge("18:30 左右","green")}
+          <h3 class="h3">成田特快：成田機場 <span class="arrow">→</span> 新宿</h3>
+          <ul class="list center">
+            <li><span class="dot"></span>機場換票 <span class="tip"><i class="fa-solid fa-circle-exclamation"></i>帶信用卡</span></li>
+            <li><span class="dot"></span>18:19 - 19.45</li>
+            <li><span class="dot"></span>18:48 - 20.13</li>
+            <li><span class="dot"></span>19:20 - 20.40</li>
+            <li><span class="dot"></span>20:47 - 22.09</li>
+          </ul>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("info",`
+    <div class="card">
+      <span class="pill gray">車程 7min</span>
+      <div class="cardRow">
+        <div class="circ green">
+          <i class="fa-solid fa-train"></i>
+        </div>
+        <div class="body pr">
+          ${tBadge("20:30 左右","green")}
+          <h3 class="h3">山手線：新宿 <span class="arrow">→</span> 新大久保站 <span class="sub">(to 飯店)</span></h3>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("primary",`
+    <div class="card">
+      <div class="cardRow">
+        <div class="circ pink">
+          <i class="fa-solid fa-cloud-moon"></i>
+        </div>
+        <div class="body">
+          ${tBadge("19:30 左右","pink")}
+          <h3 class="h3">Check-in、買宵夜、Alpen TOKYO、洗洗睡 💤</h3>
+          <div class="softBox">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>雪具店(~22:00)：JR 新宿站東口步行 1min；地鐵各線新宿站 6 號出口直達</span>
+          </div>
+        </div>
+      </div>
+    </div>`,{last:true})}
+</div>
+<section class="hotel">
+  <div class="row">
+    <div class="hBadge"><i class="fa-solid fa-hotel"></i></div>
+    <div class="body">
+      <div class="hTitle"><h3>新大久保城市酒店</h3>
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      </div>
+      <div class="hInfo">
+        <div class="r"><i class="fa-solid fa-map-pin"></i><span>地址：1 Chome-4-9 Hyakunincho, Shinjuku City, Tokyo 169-0073 日本</span></div>
+        <div class="r"><i class="fa-solid fa-phone"></i><span>電話：+81352876061</span></div>
+        <div class="r"><i class="fa-solid fa-train"></i><span>大久保 (山手線 綠色)：共7min（走路4min）</span></div>
+        <div class="r"><i class="fa-solid fa-comment-dots"></i><span>隔音很差（記得戴耳塞 XD）</span></div>
+      </div>
+    </div>
+  </div>
+</section>`;
+}
+
+function day14(){
+  return `
+<div class="tl">
+  ${tli("info",`
+    <div class="card">
+      <span class="pill gray">車程 7hr</span>
+      <div class="cardRow">
+        <div class="circ green">
+          <i class="fa-solid fa-train"></i>
+        </div>
+        <div class="body">
+          ${tBadge("8:00","green")}
+          <h3 class="h3">山手線：新大久保站 <span class="arrow">→</span> 新宿</h3>
+          <div class="inlineBox info">
+            <ul class="list lg">
+              <li><span class="dot"></span><span style="flex:1">找到小田急乘車口 <a class="linkBtn" href="https://nicklee.tw/3361/shinjuku-station/" target="_blank">部落客教學</a></span></li>
+              <li><span class="dot"></span><span>走人工通道給工作人員確認周遊券(QRcode)即可進入</span></li>
+              <li><span class="dot"></span><span style="flex:1">浪漫特快月台前，出示 e-mail 憑證和信用卡給工作人員即可 <a class="linkBtn" href="https://www.web-odakyu.com/e-romancecar/" target="_blank">確認預約</a></span></li>
+            </ul>
+          </a></div>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("info",`
+    <div class="card">
+      <span class="pill gray">車程 80min</span>
+      <div class="cardRow">
+        <div class="circ green">
+          <i class="fa-solid fa-train"></i>
+        </div>
+        <div class="body">
+          ${tBadge("10:00 - 11:21","green")}
+          <h3 class="h3">浪漫特快：新宿 <span class="arrow">→</span> 箱根湯本</h3>
+          <ul class="list center">
+            <li><span class="dot"></span>01號車廂 2D & 4D 座位</li>
+            <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>車票皮</span></li>
+            </ul>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("primary",`
+    <div class="card">
+      <div class="cardRow">
+        <div class="circ pink">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+        <div class="body">
+          ${tBadge("11:30","pink")}
+          <h3 class="h3">住宿放行李 + 商店街吃飯 + <span class="tip">買晚餐糧食</span></h3>
+          <ul class="list lg">
+            <li><span class="dot"></span><span>[午餐] はつ花 蕎麥麵 / ちもと 湯麻糬 / 直吉 湯葉丼 (豆皮蓋飯)</span></li>
+            <!--<li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>也有幾家晚餐可以選擇，注意營業時間</span></li>-->
+          </ul>
+          <div class="softBox">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>也有幾家晚餐可以選擇，注意營業時間</span>
+          </div>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("primary",`
+    <div class="card">
+      <div class="cardRow">
+        <div class="circ pink">
+          <i class="fa-solid fa-school"></i>
+        </div>
+        <div class="body">
+          ${tBadge("下午","pink")}
+          <h3 class="h3">美術館 <span class="tip">(先去最遠的逛回來）</span></h3>
+          <ul class="list">
+            <li><span class="dot"></span><span>玻璃之森美術館 [ 10:00 - 17:00 ] (強羅轉搭公車)</span></li>
+            <li><span class="dot"></span><span>POLA 美術館 [ 9:00 - 17:00 ]</span></li>
+            <li><span class="dot"></span><span>雕刻森林美術館 [ 9:00 - 17:00 ] (小湧谷下一站雕刻之森站)</span></li>
+            <!--<li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>優先去前兩個，雕刻之森來不及就第三天去</span></li>-->
+          </ul>
+          <div class="softBox">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>優先去前兩個，雕刻之森來不及就第三天去</span>
+          </div>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("primary",`
+    <div class="card">
+      <div class="cardRow">
+        <div class="circ pink">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+        <div class="body">
+          ${tBadge("18:00前","pink")}
+          <h3 class="h3">晚餐</h3>
+          <!--<ul class="list lg">
+            <li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>有幾家晚餐可以選擇，注意營業時間</span></li>
+          </ul>-->
+          <div class="softBox">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>有幾家晚餐可以選擇，注意營業時間</span>
+          </div>
+        </div>
+      </div>
+    </div>`,{last:true})}
+</div>
+<section class="hotel">
+  <div class="row">
+    <div class="hBadge"><i class="fa-solid fa-hotel"></i></div>
+    <div class="body">
+      <div class="hTitle"><h3>Condominium MIRAHAKONE</h3>
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      </div>
+      <div class="hInfo">
+        <div class="r"><i class="fa-solid fa-map-pin"></i><span>地址：462-17 Yumoto, Hakone, Ashigarashimo District, Kanagawa 250-0311 日本</span></div>
+        <div class="r"><i class="fa-solid fa-phone"></i><span>電話：+81460859353</span></div>
+        <div class="r"><i class="fa-solid fa-train"></i><span>箱根湯本站 走路約 15min</span></div>
+        <div class="r"><i class="fa-solid fa-utensils"></i><span>有冰箱、微波爐、烹飪用具</span></div>
+        <div class="r"><i class="fa-solid fa-comment-dots"></i><span>最好先買些東西當晚餐</span></div>
+      </div>
+    </div>
+  </div>
+</section>`;
+}
+
+function day15(){
+return `
+<div class="tl">
+  ${tli("primary",`
+    <div class="card">
+      <div class="cardRow">
+        <div class="circ pink">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+        <div class="body">
+          ${tBadge("8:00","pink")}
+          <h3 class="h3">箱根湯本 : 寄行李</h3>
+          <div class="softBox">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>前一天預約，以免排隊</span><a class="linkBtn" href="https://www.hakonenavi.jp/hakone-luggage-transport-service/tw/" target="_blank">預約網址&說明</a>
+          </div>
+          <ul class="list lg">
+            <li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>當天網上預訂為11.30前，行李於12:00前交至(車站)櫃檯</span></li>
+          </ul>
+          </div>
+      </div>
+    </div>`)}
+  ${tli("info",`
+    <div class="card">
+      <span class="pill gray">車程 7hr</span>
+      <div class="cardRow">
+        <div class="circ green">
+          <i class="fa-solid fa-train"></i>
+        </div>
+        <div class="body">
+          ${tBadge("8:00","green")}
+          <h3 class="h3">山手線：新大久保站 <span class="arrow">→</span> 新宿</h3>
+          <ul class="list lg">
+            <li><span class="dot"></span><span style="flex:1">找到小田急乘車口 <a class="linkBtn" href="https://nicklee.tw/3361/shinjuku-station/" target="_blank">部落客教學</a></span></li>
+            <li><span class="dot"></span><span>走人工通道給工作人員確認周遊券(QRcode)即可進入</span></li>
+            <li><span class="dot"></span><span style="flex:1">浪漫特快月台前，出示 e-mail 憑證和信用卡給工作人員即可 <a class="linkBtn" href="https://www.web-odakyu.com/e-romancecar/" target="_blank">確認預約</a></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("primary",`
+    <div class="card">
+      <div class="cardRow">
+        <div class="circ pink">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+        <div class="body">
+          ${tBadge("下午","pink")}
+          <h3 class="h3">[晚餐]</h3>
+          <ul class="list lg">
+            <li><span class="dot"></span><span style="flex:1">找到小田急乘車口 <a class="linkBtn" href="https://nicklee.tw/3361/shinjuku-station/" target="_blank">部落客教學</a></span></li>
+            <li><span class="dot"></span><span>走人工通道給工作人員確認周遊券(QRcode)即可進入</span></li>
+            <li><span class="dot"></span><span style="flex:1">浪漫特快月台前，出示 e-mail 憑證和信用卡給工作人員即可 <a class="linkBtn" href="https://www.web-odakyu.com/e-romancecar/" target="_blank">確認預約</a></span></li>
+            <li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>有幾家晚餐可以選擇，注意營業時間</span></li>
+          </ul>
+          </div>
+      </div>
+    </div>`,{last:true})}
+  </div>
+  <section class="hotel">
+  <div class="row">
+    <div class="hBadge"><i class="fa-solid fa-hotel"></i></div>
+    <div class="body">
+      <div class="hTitle"><h3>箱根ホテル小涌園</h3>
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      </div>
+      <div class="hInfo">
+        <div class="r"><i class="fa-solid fa-map-pin"></i><span>地址：日本〒250-0407 Kanagawa, Ashigarashimo District, Hakone, Ninotaira, 1297 1F</span></div>
+        <div class="r"><i class="fa-solid fa-phone"></i><span>電話：+81465225489</span></div>
+        <div class="r"><i class="fa-solid fa-suitcase-rolling"></i><span>可寄行李</span></div>
+        <div class="r"><i class="fa-solid fa-comment-dots"></i><span>含Yunessun温泉樂園券 [ 9:00 - 19:00 ]，早點到可在晚餐前去泡 ( 約4.5點到住宿 )</span></div>
+        <div class="r"><i class="fa-solid fa-utensils"></i><span>晚餐 : 19:30 / 早餐 : 07:00-9:30 (依現場為主)</span></div>
+      </div>
+    </div>
+  </div>
+</section>`;}
+function day16(){}
+function day17(){}
+function day18(){}
+function day19(){}
+function day20(){}
+
+function renderTabs(){
+  const el=document.getElementById("tabs");
+  el.innerHTML=days.map(d=>`<button data-d="${d.label}" class="tabBtn${active===d.label?" active":""}">${d.label} <span class="wk">(${d.week})</span></button>`).join("");
+  el.querySelectorAll("button").forEach(b=>b.onclick=()=>{active=b.dataset.d;render();});
+}
+function renderHero(){
+  const cur=days.find(d=>d.label===active);
+  document.getElementById("dayLabel").textContent=cur.label;
+  document.getElementById("dayWeek").textContent=`(${cur.week})`;
+  const mid=document.getElementById("heroMid");
+  if(active==="6/14"){
+    mid.innerHTML=`<div class="rt"><span>東京</span><span class="arrow">→</span><span>箱根</span></div>
+      <span class="chip">移動日</span>`;
+  } else if(active==="6/15"){
+    mid.innerHTML=`<div class="rt"><span>箱根</span></div>`;
+  } else if(active==="6/16"){
+    mid.innerHTML=`<div class="rt"><span>箱根</span><span class="arrow">→</span><span>橫濱</span></div>
+      <span class="chip">移動日</span>`;
+  } else if(active==="6/17"){
+    mid.innerHTML=`<div class="rt"><span>江之島</span></div>`;
+  } else if(active==="6/18"){
+    mid.innerHTML=`<div class="rt"><span>橫濱</span></div>`;
+  } else if(active==="6/19"){
+    mid.innerHTML=`<div class="rt"><span>橫濱</span></div>`;
+ } else {
+    mid.innerHTML=`<div class="rt"><span>台北</span><span class="arrow">→</span><span>東京</span></div>
+      <span style="font-size:1rem">☁️✈️☁️</span>`;
+  }
+}
+function render() {
+  renderTabs();
+  renderHero();
+
+  const day = days.find(d => d.label === active);
+
+  document.getElementById("content").innerHTML =
+    day?.render?.() ??
+    `<div class="empty">此日行程尚未規劃</div>`;
+
+  if(window.lucide) lucide.createIcons();
+}
+render();
+</script>
+</body>
+</html>
