@@ -36,7 +36,7 @@ i[data-lucide]{width:1.25rem;height:1.25rem;display:inline-block;vertical-align:
 .app{max-width:28rem;margin:0 auto;min-height:100vh;background:var(--bg);padding-bottom:1rem;position:relative;}
 
 /* header */
-.hd{display:flex;align-items:center;justify-content:center;padding:16px 10px;}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:16px 10px;}
 .hd h1{font-size:1.125rem;font-weight:700;letter-spacing:.04em;}
 .iconBtn{width:2.5rem;height:2.5rem;border-radius:9999px;display:flex;align-items:center;justify-content:center;background:var(--card);color:var(--primary);box-shadow:0 1px 2px rgba(0,0,0,.05);border:1px solid color-mix(in oklab,var(--border) 60%,transparent);}
 .iconBtn.primary{background:var(--primary);color:var(--primary-fg);box-shadow:0 4px 6px -1px rgba(0,0,0,.1);border:0;}
@@ -82,19 +82,18 @@ i[data-lucide]{width:1.25rem;height:1.25rem;display:inline-block;vertical-align:
 .body{flex:1;min-width:0;}
 .body.pr{padding-right:3rem;}
 
-.circ{width:2.25rem;height:2.25rem;font-size:20px;border-radius:9999px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-right:12px;}
+.circ{width:2.25rem;height:2.25rem;font-size:20px;border-radius:9999px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-right:8px;}
 .circ.pink{background:var(--primary-soft);color:var(--primary);}
 .circ.info{background:var(--info-soft);color:var(--info);}
 .circ.green{background:var(--success-soft);color:var(--success);}
 .circ.face{background:color-mix(in oklab,var(--accent) 60%,transparent);font-size:20px;}
-.circ i{}
 
 .tBadge{display:inline-block;border-radius:.375rem;padding:2px 8px;font-size:.75rem;font-weight:600;}
 .tBadge.pink{background:var(--primary-soft);color:var(--primary);}
 .tBadge.blue{background:var(--info-soft);color:var(--info);}
 .tBadge.green{background:var(--success-soft);color:var(--success);}
 
-.h3{font-size:0.9rem;font-weight:700;margin-top:.5rem;line-height:1.4;}
+.h3{font-size:0.9rem;font-weight:700;margin-top:.5rem;line-height:1.4;} 
 .h3.pri{color:var(--primary);}
 .h3.noTop{margin-top:0;}
 .arrow{color:var(--primary);}
@@ -106,7 +105,7 @@ i[data-lucide]{width:1.25rem;height:1.25rem;display:inline-block;vertical-align:
 .list.lg{gap:.5rem;}
 .list li{display:flex;align-items:flex-start;gap:5px;}
 .list.center li{align-items:center;}
-.list li .tip i{margin-left: 5px;}
+.list li .tip i{margin-right: 5px;}
 .dot{width:4px;height:4px;border-radius:9999px;background:color-mix(in oklab,var(--fg) 40%,transparent);flex-shrink:0;margin-top:.5rem;}
 .list.center .dot{margin-top:0;}
 .tip {color:var(--amber);}
@@ -119,11 +118,11 @@ i[data-lucide]{width:1.25rem;height:1.25rem;display:inline-block;vertical-align:
 .pill.gray{background:#f4fcf3;color:var(--success);border:1px solid #e6e6e6;}
 
 
-.inlineBox{margin-top:.75rem;display:flex;align-items:center;justify-content:space-between;border-radius:.5rem;padding:8px;}
+.inlineBox{margin-top:.75rem;display:flex;align-items:flex-start;border-radius:.5rem;padding:8px;gap:.2rem;}
 .inlineBox.info{background:color-mix(in oklab,var(--gray-soft) 60%,transparent);border:1px solid color-mix(in oklab,var(--gray) 15%,transparent);}
-.inlineBox .l{display:flex;align-items:center;gap:.2rem;color:color-mix(in oklab,var(--fg) 80%,transparent);min-width:0;}
-.inlineBox .l span{font-size:.8rem;}
-.inlineBox .l i{color:var(--gray);margin-top:2px;}
+
+.inlineBox span{font-size:.8rem;}
+.inlineBox i{color:var(--gray);margin-top:2px;}
 .inlineBox .list {margin: 0;}
 
 .linkBtn{display:inline-flex;align-items:center;gap:4px;font-size:.75rem;font-weight:600;color:var(--success);padding:2px 6px;border-radius:.375rem;border:1px solid color-mix(in oklab,var(--success) 30%,transparent);background:var(--card);flex-shrink:0;margin-left:5px;text-decoration:none;}
@@ -169,9 +168,9 @@ i[data-lucide]{width:1.25rem;height:1.25rem;display:inline-block;vertical-align:
 <body>
 <div class="app">
   <header class="hd">
-    <!-- <button class="iconBtn"><i data-lucide="chevron-left"></i></button> -->
+    <a class="iconBtn primary" href="https://www.google.com/maps/d/u/0/edit?mid=13zU2onmDde1BSsCa4jVR407_RaJ7OI8&usp=sharing" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>
     <h1>我的旅程</h1>
-    <!-- <button class="iconBtn primary"><i data-lucide="pencil"></i></button> -->
+    <a class="iconBtn primary" href="https://chatter-stallion-366.notion.site/342a480508b180b08bccf2b4d7154277?source=copy_link" target="_blank"><i class="fa-solid fa-book"></i></a>
   </header>
 
   <section class="hero">
@@ -258,8 +257,10 @@ function day13(){
           ${tBadge("13:00 - 17:15","green")}
           <h3 class="h3">國泰cx450：桃園機場 1T <span class="arrow">→</span> 成田機場 2T</h3>
           <div class="inlineBox info">
-            <div class="l"><i class="fa-solid fa-location-dot"></i><span>成田機場御朱印 (2航廈主樓到達區1層)</span></div>
-            <a class="linkBtn" href="https://jalplaza-airport.jalux.com/shop/nrt/" target="_blank">MAP<a>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>成田機場御朱印<br>
+              (2航廈主樓到達區1層)<a class="linkBtn" href="https://jalplaza-airport.jalux.com/shop/nrt/" target="_blank">MAP<a></span>
+            
           </div>
         </div>
       </div>
@@ -271,16 +272,23 @@ function day13(){
         <div class="circ green">
           <i class="fa-solid fa-train"></i>
         </div>
-        <div class="body pr">
+        <div class="body">
           ${tBadge("18:30 左右","green")}
           <h3 class="h3">成田特快：成田機場 <span class="arrow">→</span> 新宿</h3>
           <ul class="list center">
-            <li><span class="dot"></span><span>機場換票<span class="tip"><i class="fa-solid fa-circle-exclamation"></i>帶信用卡</span></span></li>
             <li><span class="dot"></span>18:19 - 19.45</li>
             <li><span class="dot"></span>18:48 - 20.13</li>
             <li><span class="dot"></span>19:20 - 20.40</li>
             <li><span class="dot"></span>20:47 - 22.09</li>
           </ul>
+          <div class="amberBox">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>機場換票，帶信用卡</span>
+          </div>
+          <div class="softBox">
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>確認回程是否也要先取票</span>
+          </div>
         </div>
       </div>
     </div>`)}
@@ -291,8 +299,8 @@ function day13(){
         <div class="circ green">
           <i class="fa-solid fa-train"></i>
         </div>
-        <div class="body pr">
-          ${tBadge("20:30 左右","green")}
+        <div class="body">
+          ${tBadge("21:00 左右","green")}
           <h3 class="h3">山手線：新宿 <span class="arrow">→</span> 新大久保站 <span class="sub">(to 飯店)</span></h3>
         </div>
       </div>
@@ -308,7 +316,7 @@ function day13(){
           <h3 class="h3">Check-in、買宵夜、Alpen TOKYO、洗洗睡 💤</h3>
           <div class="softBox">
             <i class="fa-solid fa-location-dot"></i>
-            <span>雪具店(~22:00)：JR 新宿站東口步行 1min；地鐵各線新宿站 6 號出口直達</span>
+            <span>雪具店(~22:00)：JR 新宿東口步行 1min；地鐵各線新宿站 6號出口直達</span>
           </div>
         </div>
       </div>
@@ -337,7 +345,7 @@ function day14(){
 <div class="tl">
   ${tli("info",`
     <div class="card">
-      <span class="pill gray">車程 7hr</span>
+      <span class="pill gray">車程 7min</span>
       <div class="cardRow">
         <div class="circ green">
           <i class="fa-solid fa-train"></i>
@@ -347,9 +355,9 @@ function day14(){
           <h3 class="h3">山手線：新大久保站 <span class="arrow">→</span> 新宿</h3>
           <div class="inlineBox info">
             <ul class="list lg">
-              <li><span class="dot"></span><span style="flex:1">找到小田急乘車口 <a class="linkBtn" href="https://nicklee.tw/3361/shinjuku-station/" target="_blank">部落客教學</a></span></li>
-              <li><span class="dot"></span><span>走人工通道給工作人員確認周遊券(QRcode)即可進入</span></li>
-              <li><span class="dot"></span><span style="flex:1">浪漫特快月台前，出示 e-mail 憑證和信用卡給工作人員即可 <a class="linkBtn" href="https://www.web-odakyu.com/e-romancecar/" target="_blank">確認預約</a></span></li>
+              <li><i class="fa-solid fa-comment-dots" style="margin-top:5px;"></i><span>找到小田急乘車口 <a class="linkBtn" href="https://nicklee.tw/3361/shinjuku-station/" target="_blank">部落客教學</a></span></li>
+              <li><i class="fa-solid fa-comment-dots" style="margin-top:5px;"></i><span>走人工通道給工作人員確認周遊券(QRcode)即可進入</span></li>
+              <li><i class="fa-solid fa-comment-dots" style="margin-top:5px;"></i><span>浪漫特快月台前，出示 e-mail 憑證和信用卡給工作人員即可 <a class="linkBtn" href="https://www.web-odakyu.com/e-romancecar/" target="_blank">確認預約</a></span></li>
             </ul>
           </a></div>
         </div>
@@ -357,7 +365,7 @@ function day14(){
     </div>`)}
   ${tli("info",`
     <div class="card">
-      <span class="pill gray">車程 80min</span>
+      <span class="pill gray">車程 1hr 20min</span>
       <div class="cardRow">
         <div class="circ green">
           <i class="fa-solid fa-train"></i>
@@ -383,11 +391,15 @@ function day14(){
           <h3 class="h3">住宿放行李 + 商店街吃飯 + <span class="tip">買晚餐糧食</span></h3>
           <ul class="list lg">
             <li><span class="dot"></span><span>[午餐]：はつ花 蕎麥麵 / ちもと 湯麻糬 / 直吉 湯葉丼 (豆皮蓋飯)</span></li>
-            <!--<li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>也有幾家晚餐可以選擇，注意營業時間</span></li>-->
+            <!--<li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>晚餐要吃店家也，注意營業時間</span></li>-->
           </ul>
           <div class="amberBox">
             <i class="fa-solid fa-circle-exclamation"></i>
             <span>也有幾家晚餐可以選擇，注意營業時間</span>
+          </div>
+          <div class="softBox">
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>看一下明天箱根巴士的班次</span>
           </div>
         </div>
       </div>
@@ -405,10 +417,10 @@ function day14(){
             <li><span class="dot"></span><span>玻璃之森美術館 [ 10:00 - 17:00 ] (強羅轉搭公車)</span></li>
             <li><span class="dot"></span><span>POLA 美術館 [ 9:00 - 17:00 ]</span></li>
             <li><span class="dot"></span><span>雕刻森林美術館 [ 9:00 - 17:00 ] (小湧谷下一站雕刻之森站)</span></li>
-            <!--<li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>優先去前兩個，雕刻之森來不及就第三天去</span></li>-->
+            <!--<li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>優先去前兩個，雕刻之森來不及就明天去</span></li>-->
             <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>美術館皮</span></li>
           </ul>
-          <div class="amberBox">
+          <div class="softBox">
             <i class="fa-solid fa-circle-exclamation"></i>
             <span>優先去前兩個，雕刻之森來不及就第三天去</span>
           </div>
@@ -424,9 +436,14 @@ function day14(){
         <div class="body">
           ${tBadge("18:00 前","pink")}
           <h3 class="h3">晚餐</h3>
-          <!--<ul class="list lg">
-            <li><span class="dot"></span><span class="tip"><i class="fa-solid fa-circle-exclamation"></i>有幾家晚餐可以選擇，注意營業時間</span></li>
-          </ul>-->
+          <ul class="list lg">
+            <li><span class="dot"></span><span>High Collar中華 日清亭 拉麵 [ 17:00 - 20:00 ]</span></li>
+            <li><span class="dot"></span><span>知客茶家 豆腐山藥料理 [ 17:00 - 18:30 ]</span></li>
+            <li><span class="dot"></span><span>囲炉裏茶寮 八里 炭火燒烤 [ 11:30 - 21:00<span class="tip"><i class="fa-solid fa-circle-exclamation"></i>需預約</span> ]</span></li>
+            <li><span class="dot"></span><span>田むら銀かつ亭 炸豆腐排 [ 17:00 - 19:00 ]</span></li>
+            
+
+            </ul>
           <div class="amberBox">
             <i class="fa-solid fa-circle-exclamation"></i>
             <span>注意營業時間</span>
@@ -471,9 +488,8 @@ function day15(){
             <span>前一天預約，以免排隊</span></span>
           </div>
           <div class="softBox">
-            <ul class="list lg">
-              <li><span class="tip"><i class="fa-solid fa-comment-dots"></i>當天網上預訂為11.30前，行李於12:00前交至(車站)櫃檯<a class="linkBtn pri" href="https://www.hakonenavi.jp/hakone-luggage-transport-service/tw/" target="_blank">預約網址&說明</a></span></li>
-            </ul>
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>當天網上預訂為11.30前，行李於12:00前交至(車站)櫃檯<a class="linkBtn pri" href="https://www.hakonenavi.jp/hakone-luggage-transport-service/tw/" target="_blank">預約網址&說明</a></span>
           </div>
         </div>
       </div>
@@ -493,6 +509,10 @@ function day15(){
             <li><span class="dot"></span><span>9:23 / 45 (H)</span></li>
             <li><span class="dot"></span><span>10:10 (R) / 10:13 (H)</span></li>
           </ul>
+          <div class="amberBox">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>直接排隊上車</span>
+          </div>
         </div>
       </div>
     </div>`)}
@@ -509,9 +529,9 @@ function day15(){
             <li><span class="dot"></span><span>箱根巴士：箱根湯本 → 元箱根港 → 箱根神社 → 蘆之湖成川美術館 (拍風景)</span></li>
             <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>神社皮</span></li>
             <li><span class="dot"></span><span>[午餐]：La Terrazza 芦之湖 正宗拿坡里披薩</span></li>
-            <li><span class="dot"></span><span>海盜觀光船 ( 商務艙 700JPY ) : 元箱根港 → 桃園台</span></li>
-            <li><span class="dot"></span><span>空中纜車 : 桃園台 → 大湧谷 → 早雲山<span class="tip"><i class="fa-solid fa-circle-exclamation"></i>末 17:00</span></span></li>
-            <li><span class="dot"></span><span>登山纜車 : 早雲山 → 強羅公園(公園下站) → 強羅<span class="tip"><i class="fa-solid fa-circle-exclamation"></i>末 19:00</span></span></li>
+            <li><span class="dot"></span><span>海盜觀光船 (商務艙 700JPY)：元箱根港 → 桃園台</span></li>
+            <li><span class="dot"></span><span>空中纜車：桃園台 → 大湧谷 → 早雲山<span class="tip"><i class="fa-solid fa-circle-exclamation" style="padding-left:5px;"></i>末 17:00</span></span></li>
+            <li><span class="dot"></span><span>登山纜車：早雲山 → 強羅公園(公園下站) → 強羅<span class="tip"><i class="fa-solid fa-circle-exclamation" style="padding-left:5px;"></i>末 19:00</span></span></li>
           </ul>
           </div>
       </div>
@@ -535,7 +555,8 @@ function day15(){
             <span>4號月台，米色接駁車</span>
           </div>
           <div class="inlineBox info">
-            <div class="l"><i class="fa-solid fa-bell"></i><span>[備案] 登山電車：強羅 → 小湧谷 ( 走到飯店 15min)</span></div>
+            <i class="fa-solid fa-bell"></i>
+            <span>[備案] 登山電車：強羅 → 小湧谷 ( 走到飯店 15min)</span>
           </a></div>
         </div>
       </div>
@@ -607,7 +628,7 @@ function day16(){
             <li><span class="dot"></span><span>小田原城<a class="linkBtn" href="https://odawaracastle.com/" target="_blank">官網</a> 
               → 報徳二宮神社 / 金次郎咖啡<a class="linkBtn" href="https://www.hotoku.co.jp/hotoku-mori/" target="_blank">官網</a></span></li>
             <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>神社皮</span></li>
-            <li><span class="dot"></span><span> [ 午餐 ] 小田原關東煮總店 (在海邊，11:30 - 14:30 / 16:00 - 20:00)</span></li>
+            <li><span class="dot"></span><span> [午餐]：小田原關東煮總店 (在海邊，11:30 - 14:30 / 16:00 - 20:00)</span></li>
             <li><span class="dot"></span><span>潮門 (通往大海的隧道) → 美雪之濱 (海灘)</span></li>
             <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>沙灘皮</span></li>
             <li><span class="dot"></span><span>14F 展望足湯庭園 (免費足湯)</span></li>
@@ -637,7 +658,7 @@ function day16(){
         </div>
         <div class="body">
           ${tBadge("轉乘","green")}
-          <h3 class="h3">相鐵本縣特快：海老名 <span class="arrow">→</span> 橫濱</h3>
+          <h3 class="h3">相鐵本縣特快：海老名 <span class="arrow">→</span> 橫濱 <span class="sub">(to 飯店)</span></h3>
           <ul class="list lg">
             <li><span class="dot"></span><span>$ 330 JPY (補票)</span></li>
           </ul>
@@ -666,13 +687,26 @@ function day17(){
 <div class="tl">
   ${tli("info",`
     <div class="card">
-      <span class="pill gray">車程 15min</span>
+      <span class="pill gray">車程 20min</span>
       <div class="cardRow">
         <div class="circ green">
           <i class="fa-solid fa-train"></i>
         </div>
         <div class="body">
           ${tBadge("8:00 左右","green")}
+          <h3 class="h3">JR：橫濱站 <span class="arrow">→</span> 大船站</h3>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("info",`
+    <div class="card">
+      <span class="pill gray">車程 15min</span>
+      <div class="cardRow">
+        <div class="circ green">
+          <i class="fa-solid fa-train"></i>
+        </div>
+        <div class="body">
+          ${tBadge("8:30 左右","green")}
           <h3 class="h3">湘南單軌電車：大船站 <span class="arrow">→</span> 湘南江之島站</h3>
           <div class="amberBox">
             <i class="fa-solid fa-circle-exclamation"></i>
@@ -688,7 +722,7 @@ function day17(){
           <i class="fa-solid fa-school"></i>
         </div>
         <div class="body">
-          ${tBadge("08:30 左右","pink")}
+          ${tBadge("08:45 左右","pink")}
           <h3 class="h3">鎌倉高校前平交道</h3>
           <ul class="list lg">
             <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>票券皮</span></li>
@@ -707,7 +741,7 @@ function day17(){
         </div>
         <div class="body">
           ${tBadge("09:00 左右","pink")}
-          <h3 class="h3">[ 早餐 ] bills 七里ヶ浜</h3>
+          <h3 class="h3">[早餐] bills 七里ヶ浜</h3>
           <ul class="list lg">
             <li><span class="dot"></span><a class="linkBtn" href="https://www.billsjapan.com/jp" target="_blank">官網</a>
               <a class="linkBtn" href="https://emily110323.pixnet.net/blog/posts/13356126468" target="_blank">預訂教學</a></li>
@@ -741,7 +775,7 @@ function day17(){
           </ul>
           <div class="softBox">
             <ul class="list lg">
-              <li><span class="tip"><i class="fa-solid fa-comment-dots"></i>江島PASS：$1550 JPY<a class="linkBtn pri" href=" PASS $1550 JPY">1 Day Pass</a></span></li>
+              <li><span class="tip"><i class="fa-solid fa-ticket"></i>江島PASS：$1550 JPY<a class="linkBtn pri" href="https://discover-fujisawa.jp/tw/access/#pass" target="_blank">1 Day Pass</a></span></li>
             </ul>
           </div>
         </div>
@@ -754,29 +788,14 @@ function day18(){
 <div class="tl">
   ${tli("info",`
     <div class="card">
-      <span class="pill gray">車程 15min</span>
+      <span class="pill gray">車程 30min</span>
       <div class="cardRow">
         <div class="circ green">
           <i class="fa-solid fa-train"></i>
         </div>
         <div class="body">
-          ${tBadge("8:00","green")}
+          ${tBadge("8:00 左右","green")}
           <h3 class="h3">JR：橫濱 <span class="arrow">→</span> 鎌倉</h3>
-        </div>
-      </div>
-    </div>`)}
-  ${tli("primary",`
-    <div class="card">
-      <div class="cardRow">
-        <div class="circ pink">
-          <i class="fa-solid fa-school"></i>
-        </div>
-        <div class="body">
-          ${tBadge("9:00","pink")}
-          <h3 class="h3">[早餐] VERVE COFFEE ROASTERS</h3>
-          <ul class="list lg">
-            <li><span class="dot"></span><span><a class="linkBtn" href="https://www.billsjapan.com/jp" target="_blank">官網</a></span></li>
-          </ul>
         </div>
       </div>
     </div>`)}
@@ -787,28 +806,40 @@ function day18(){
           <i class="fa-solid fa-utensils"></i>
         </div>
         <div class="body">
+          ${tBadge("9:00 左右","pink")}
+          <h3 class="h3">[早餐] VERVE COFFEE ROASTERS</h3>
+        </div>
+      </div>
+    </div>`)}
+  ${tli("primary",`
+    <div class="card">
+      <div class="cardRow">
+        <div class="circ pink">
+          <i class="fa-solid fa-train-tram"></i>
+        </div>
+        <div class="body">
           ${tBadge("10:00 左右","pink")}
           <h3 class="h3">鎌倉一日遊</h3>
           <ul class="list lg">
-            <li>[ 極樂寺 ]</li>
+            <li style="font-weight:bold;">[ 極樂寺 ]</li>
             <li><span class="dot"></span><span>極樂洞 (火車+山洞)</span></li>
             <li><span class="dot"></span><span>成就院 (看海+繡球花參道) (走路10min)</span></li>
             <li><span class="dot"></span><span>有幾家咖啡廳</span></li>
-            <li>[ 長谷 ]</li>
-            <li><span class="dot"></span><span>御靈神社 [ 9:00 - 17:00 ] : 門票 $100 JPY</span></li>
-            <li><span class="dot"></span><span>長谷寺 [ 8:00 - 17:00 ] : 門票 $300 JPY</span></li>
+            <li style="font-weight:bold;">[ 長谷 ]</li>
+            <li><span class="dot"></span><span>御靈神社 [ 9:00 - 17:00 ]：門票 $100 JPY</span></li>
+            <li><span class="dot"></span><span>長谷寺 [ 8:00 - 17:00 ]：門票 $300 JPY</span></li>
             <li><span class="dot"></span><span>紫陽花步道<a class="linkBtn" href="https://webket.jp/pc/ticket/index?fc=71118&ac=9000" target="_blank">預約網址</a></span></li>
-            <li>[ 鎌倉 ]</li>
+            <li style="font-weight:bold;">[ 鎌倉 ]</li>
             <li><span class="dot"></span><span>佐助稻荷神社 (西口走路20min)</span></li>
             <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>神社皮</span></li>
-            <li><span class="dot"></span><span>錢洗弁財天宇賀福神社 [ 8:00 - 16:30 最晚16:00 ] (西口走路25min)</span></li>
-            <li><span class="dot"></span><span>杉本寺 [ 9:00 - 16:00 最晚入場15:45 ] : 門票 $300 JPY<a class="linkBtn" href="https://visit.trip-kamakura.com/zh-hant/things-to-do/sugimotodera-temple_tw/" target="_blank">介紹&交通</a></span></li>
+            <li><span class="dot"></span><span>錢洗弁財天宇賀福神社 [ 8:00 - 16:30 <span class="tip"><i class="fa-solid fa-circle-exclamation" style="padding-left:5px;"></i>最晚 16:00</span> ] (西口走路25min)</span></li>
+            <li><span class="dot"></span><span>杉本寺 [ 9:00 - 16:00 <span class="tip"><i class="fa-solid fa-circle-exclamation" style="padding-left:5px;"></i>最晚 15:45</span> ] : 門票 $300 JPY<a class="linkBtn" href="https://visit.trip-kamakura.com/zh-hant/things-to-do/sugimotodera-temple_tw/" target="_blank">介紹&交通</a></span></li>
             <li><span class="dot"></span><span>小通町商店街</span></li>
             <li><span class="dot"></span><span>藍瓶咖啡 (繡球花提袋)</span></li>
             <li><span class="dot"></span><span>Souvenir Gallery KAMAKURA 有朱印帳套子 (永久歇業???)</span></li>
-            <li><span class="dot"></span><span>[ 午晚餐 ] 鎌倉釜飯かまかま [ 10:00 - 17:00 ] </span></li>
-            <li>[ 北鎌倉 ]</li>
-            <li><span class="dot"></span><span>明月院 [ 8:30 - 16:00 ] : 門票 $500 JPY (走路10min)</span></li>
+            <li><span class="dot"></span><span>[午晚餐] 鎌倉釜飯かまかま [ 10:00 - 17:00 ] </span></li>
+            <li style="font-weight:bold;">[ 北鎌倉 ]</li>
+            <li><span class="dot"></span><span>明月院 [ 8:30 - 16:00 ]：門票 $500 JPY (走路10min)</span></li>
           </ul>
         </div>
       </div>
@@ -821,11 +852,11 @@ function day19(){
     <div class="card">
       <div class="cardRow">
         <div class="circ pink">
-          <i class="fa-solid fa-school"></i>
+          <i class="fa-solid fa-utensils"></i>
         </div>
         <div class="body">
           ${tBadge("8:00 左右","pink")}
-          <h3 class="h3"> [ 早餐 ] 看有啥咖啡廳</h3>
+          <h3 class="h3"> [早餐] 看有啥咖啡廳</h3>
           <ul class="list lg">
             <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>咖啡皮</span></li>
           </ul>
@@ -836,24 +867,23 @@ function day19(){
     <div class="card">
       <div class="cardRow">
         <div class="circ pink">
-          <i class="fa-solid fa-utensils"></i>
+          <i class="fa-solid fa-school"></i>
         </div>
         <div class="body">
           ${tBadge("10:00 左右","pink")}
           <h3 class="h3">自由活動</h3>
           <ul class="list lg">
             <li><span class="dot"></span><span>紅磚倉庫 [ 11:00–20:00 ]</span></li>
-            <li><span class="dot"></span><span>日清合味道紀念館 [ 10:00 - 18:00 <span class="tip"><i class="fa-solid fa-circle-exclamation"></i>最晚 17:00</span> ]</span></li>
+            <li><span class="dot"></span><span>日清合味道紀念館 [ 10:00 - 18:00 <span class="tip"><i class="fa-solid fa-circle-exclamation" style="padding-left:5px;"></i>最晚 17:00</span> ]</span></li>
             <li><span class="dot"></span><span>橫濱美術館 [ 10:00 - 18:00 ] </span></li>
             <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>美術館皮</span></li>
             <li><span class="dot"></span><span>郵輪博物館</span></li>
             <li><span class="dot"></span><span>山下公園</span></li>
-            <li><span class="dot"></span><span>橫濱 LANDMARK TOWER 69樓觀景台 空中花園 [ 10:00-21:00 <span class="tip"><i class="fa-solid fa-circle-exclamation"></i>最晚 20:30</span> ]</span></li>
+            <li><span class="dot"></span><span>橫濱 LANDMARK TOWER 69樓觀景台 空中花園 [ 10:00-21:00 <span class="tip"><i class="fa-solid fa-circle-exclamation" style="padding-left:5px;"></i>最晚 20:30</span> ]</span></li>
             <li><span class="dot"></span><span>纜車 YOKOHAMA AIR CABIN [ 10:00 - 21:00 ]</span></li>
-            <li><span class="dot"></span><span>摩天輪 COSMO CLOCK 21 [ 11:00 - 19:30 <span class="tip"><i class="fa-solid fa-circle-exclamation"></i>周四公休</span> ]</span></li>
+            <li><span class="dot"></span><span>摩天輪 COSMO CLOCK 21 [ 11:00 - 19:30 <span class="tip"><i class="fa-solid fa-circle-exclamation" style="padding-left:5px;"></i>周四公休</span> ]</span></li>
             <li><span class="dot"></span><span class="pp"><i class="fa-brands fa-android"></i>遊樂園皮</span></li>
             <li><span class="dot"></span><span>橫濱港未來萬葉俱樂部 (泡湯)</span></li>
-            <li><span class="dot"></span><span>藍瓶咖啡 (繡球花提袋)</span></li>
             <li><span class="dot"></span><span>中華街</span></li>
             <li><span class="dot"></span><span>三溪園</span></li>
           </ul>
@@ -882,7 +912,7 @@ function day20(){
     </div>`)}
   ${tli("info",`
     <div class="card">
-      <span class="pill gray">車程 1hr 40min</span>
+      <span class="pill gray">車程 1hr 25min</span>
       <div class="cardRow">
         <div class="circ green">
           <i class="fa-solid fa-train"></i>
@@ -900,7 +930,7 @@ function day20(){
       <span class="pill gray">航程 3hr 40min</span>
       <div class="cardRow">
         <div class="circ green">
-          <i class="fa-solid fa-plane-departure"></i>
+          <i class="fa-solid fa-plane-arrival"></i>
         </div>
         <div class="body pr">
           ${tBadge("15:45 - 18:25","green")}
